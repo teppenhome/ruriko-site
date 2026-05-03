@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>店舗一覧 | 瑠璃光薬局</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500;700&family=Noto+Sans+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="p-store">
+    <header class="p-header">
+      <div class="p-header__inner l-container">
+        <a class="p-header__logo" href="index.html">
+          <img src="/assets/img/logo-wide.png" alt="瑠璃光薬局" />
+        </a>
+        <nav class="p-header__nav" id="global-nav" aria-label="グローバルナビゲーション">
+          <ul class="p-header__list">
+            <li class="p-header__item">
+              <a class="p-header__link" href="index.html">トップ</a>
+            </li>
+            <li class="p-header__item">
+              <a class="p-header__link" href="store.html" aria-current="page">店舗一覧</a>
+            </li>
+            <li class="p-header__item">
+              <a class="p-header__link" href="company.html">会社情報</a>
+            </li>
+            <li class="p-header__item">
+              <a class="p-header__link" href="mission.html">ミッション</a>
+            </li>
+            <li class="p-header__item">
+              <a class="p-header__link" href="origin.html">社名の由来</a>
+            </li>
+            <li class="p-header__item">
+              <a class="p-header__link" href="work.html">働き方</a>
+            </li>
+            <li class="p-header__item">
+              <a class="p-header__link" href="column.html">コラム</a>
+            </li>
+            <li class="p-header__item">
+              <a class="p-header__link" href="privacy.html">プライバシー</a>
+            </li>
+          </ul>
+        </nav>
+        <button
+          type="button"
+          class="p-header__hamburger"
+          aria-expanded="false"
+          aria-controls="global-nav"
+          aria-label="メニューを開く"
+        >
+          <span class="p-header__hamburger-line" aria-hidden="true"></span>
+          <span class="p-header__hamburger-line" aria-hidden="true"></span>
+          <span class="p-header__hamburger-line" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="p-header__overlay" aria-hidden="true"></div>
+    </header>
+
+    <main class="l-main" id="main">
+      <div class="p-store-bg">
+        <span class="p-store-bg-circle c1"></span>
+        <span class="p-store-bg-circle c2"></span>
+        <span class="p-store-bg-circle c3"></span>
+        <span class="p-store-bg-circle c4"></span>
+        <span class="p-store-bg-circle c5"></span>
+        <span class="p-store-bg-circle c6"></span>
+        <span class="p-store-bg-circle c7"></span>
+      </div>
+      <section class="p-store-mv l-container" aria-labelledby="store-mv-heading">
+        <h1 class="p-sub-mv__title js-title-mask">
+          <span>店舗一覧</span>
+        </h1>
+        <div class="p-company-deco__circle p-company-deco__circle--mv01" aria-hidden="true"></div>
+        <div class="p-company-deco__circle p-company-deco__circle--mv02" aria-hidden="true"></div>
+        <div class="l-container">
+          <div class="p-mv-pill">
+            <div class="p-mv-pill__half-wrap p-mv-pill__half-wrap--left">
+              <div class="p-mv-pill__half p-mv-pill__half--left">
+                <img src="/assets/img/store/page-top_yellow.png" alt="黄色の背景" />
+              </div>
+          
+              <!-- 文字は動かさない -->
+              <div class="p-mv-pill__text _black">
+                瑠璃光薬局は、ブルー＆イエローの看板が目印の調剤薬局グループです。<br />石川県・富山県のそれぞれの地域で、皆さまの「かかりつけ薬局」として日々取り組んでいます。
+              </div>
+            </div>
+          
+            <div class="p-mv-pill__half-wrap p-mv-pill__half-wrap--right">
+              <div class="p-mv-pill__half p-mv-pill__half--right">
+                <img src="/assets/img/company/company-top.png" alt="瑠璃光薬局の店舗の様子" />
+              </div>
+            </div>
+          
+            <div class="p-mv-pill__center">
+              <img src="/assets/img/medicine06.png" alt="薬のイメージ" />
+            </div>
+            <div class="p-mv-pill__center _02">
+              <img src="/assets/img/medicine06.png" alt="薬のイメージ" />
+            </div>
+            <div class="p-mv-pill__center _03">
+              <img src="/assets/img/medicine06.png" alt="薬のイメージ" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="p-store-tabs" aria-label="エリアで絞り込む">
+        <div class="l-container">
+          <ul class="p-store-tabs__list" role="tablist">
+            <li role="presentation">
+              <button
+                type="button"
+                class="p-store-tabs__button p-store-tabs__button--primary"
+                role="tab"
+                aria-selected="true"
+                id="tab-ishikawa"
+                aria-controls="panel-ishikawa"
+                data-store-area="ishikawa"
+              >
+                石川県の店舗
+                <span class="p-store-tabs__badge">11</span>
+              </button>
+            </li>
+            <li role="presentation">
+              <button
+                type="button"
+                class="p-store-tabs__button p-store-tabs__button--accent"
+                role="tab"
+                aria-selected="false"
+                id="tab-toyama"
+                aria-controls="panel-toyama"
+                data-store-area="toyama"
+              >
+                富山県の店舗
+                <span class="p-store-tabs__badge">13</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ここはWP化時にループ化（カスタム投稿「店舗」＋エリアタクソノミー等で出力） -->
+      <section
+        class="p-store-region"
+        id="panel-ishikawa"
+        role="tabpanel"
+        aria-labelledby="tab-ishikawa"
+        data-store-panel="ishikawa"
+      >
+        <div class="l-container">
+          <ul class="p-store-list">
+            <li class="p-store-card" data-store-area="ishikawa">
+              <div class="p-store-card__head">
+                <h2 class="p-store-card__title">津幡本店</h2>
+                <span class="p-store-card__area">津幡町</span>
+              </div>
+            
+              <div class="p-store-card__badges">
+                <span>地域連携薬局</span>
+                <span>健康サポート薬局</span>
+              </div>
+            
+              <div class="p-store-card__image">
+                <img src="/assets/img/store/tsubata.jpg" alt="津幡本店の外観" loading="lazy" />
+              </div>
+            
+              <div class="p-store-card__access">
+                <p>〒929-0323 石川県河北郡津幡町字津幡ロ143番地2</p>
+                <p>Tel：076-288-8358 ／ Fax：076-288-8353</p>
+                <p>E-mail：rurikou.honten@arrow.ocn.ne.jp</p>
+              </div>
+            
+              <div class="p-store-card__info">
+                <div class="p-store-card__info-time">
+                  <p>営業時間：</p>
+                </div>
+                <div class="p-store-card__info-time-list">
+                  <p>月〜金：8:30〜18:30</p>
+                  <p>土：8:30〜18:00</p>
+                  <p>日・祝：定休日</p>
+                </div>
+              </div>
+            
+              <p class="p-store-card__body">
+                河北中央病院の目の前にある1号店です。門前の処方せんはもちろん、大学病院やさまざまな医療機関の処方せんにも対応し、地域のみなさまの健康を支えています。
+              </p>
+            
+              <div class="p-store-card__buttons">
+                <a class="c-button c-button--store-line" href="#">LINEで処方せんを送る</a>
+                <a class="c-button c-button--store-map" href="#" target="_blank" rel="noopener noreferrer">
+                  Googleマップで開く
+                </a>
+              </div>
+            </li>
+            <li class="p-store-card" data-store-area="ishikawa">
+              <div class="p-store-card__head">
+                <h2 class="p-store-card__title">志雄店</h2>
+                <span class="p-store-card__area">宝達志水町</span>
+              </div>
+            
+              <div class="p-store-card__badges">
+                <span>地域連携薬局</span>
+                <span>健康サポート薬局</span>
+              </div>
+            
+              <div class="p-store-card__image">
+                <img src="/assets/img/store/shio.jpg" alt="志雄店の外観" loading="lazy" />
+              </div>
+            
+              <div class="p-store-card__access">
+                <p>〒929-1425  石川県羽咋郡宝達志水町子浦ハ7-1</p>
+                <p>Tel：0767-29-4877 ／ Fax：0767-29-4876</p>
+                <p>E-mail：rurikou.shioten@aioros.ocn.ne.jp</p>
+              </div>
+            
+              <div class="p-store-card__info">
+                <div class="p-store-card__info-time">
+                  <p>営業時間：</p>
+                </div>
+                <div class="p-store-card__info-time-list">
+                  <p>月〜金：8:30〜18:00</p>
+                  <p>土：8:30〜13:00</p>
+                  <p>日・祝：定休日</p>
+                </div>
+              </div>
+            
+              <p class="p-store-card__body">
+                町立宝達志水病院に隣接し、自然豊かな地域に根ざした薬局です。お薬の相談から日常の健康相談まで、気軽に立ち寄っていただける身近な存在を目指しています。
+              </p>
+            
+              <div class="p-store-card__buttons">
+                <a class="c-button c-button--store-line" href="#">LINEで処方せんを送る</a>
+                <a class="c-button c-button--store-map" href="#" target="_blank" rel="noopener noreferrer">
+                  Googleマップで開く
+                </a>
+              </div>
+            </li>
+
+            <li class="p-store-banner">
+              <div class="p-store-banner__link">
+                <div class="p-store-banner__deco" aria-hidden="true">
+                  <img src="/assets/img/store/deco01.png" class="d1" alt="薬のイラスト" />
+                  <img src="/assets/img/store/deco02.png" class="d2" alt="薬のイラスト" />
+                  <img src="/assets/img/store/deco03.png" class="d3" alt="薬のイラスト" />
+                  <img src="/assets/img/store/deco04.png" class="d4" alt="薬のイラスト" />
+                  <img src="/assets/img/store/deco05.png" class="d5" alt="薬のイラスト" />
+                  <img src="/assets/img/store/deco06.png" class="d6" alt="薬のイラスト" />
+                  <img src="/assets/img/store/deco07.png" class="d7" alt="薬のイラスト" />
+                </div>
+
+                <div class="p-store-banner__title">
+                  店舗LINEに<br />
+                  登録しよう！
+                </div>
+            
+                <div class="p-store-banner__phone" aria-hidden="true">
+                  <img src="/assets/img/store/line-phone.png" alt="" />
+                </div>
+            
+                <p class="p-store-banner__text">
+                  店舗LINEに登録いただき、撮影した処方箋画像をLINEで薬局に送信。事前に調剤が開始されるため、薬局での待ち時間を短縮でき、スムーズに薬をお受け取りいただけます。ぜひ、ご登録を！
+                </p>
+              </div>
+            </li>
+
+            <li class="p-store-card" data-store-area="ishikawa">
+              <div class="p-store-card__head">
+                <h2 class="p-store-card__title">押水店</h2>
+                <span class="p-store-card__area">宝達志水町</span>
+              </div>
+            
+              <div class="p-store-card__badges">
+              </div>
+            
+              <div class="p-store-card__image">
+                <img src="/assets/img/store/oshimizu.jpg" alt="押水店の外観" loading="lazy" />
+              </div>
+            
+              <div class="p-store-card__access">
+                <p>〒929-1311  石川県羽咋郡宝達志水町門前150-9</p>
+                <p>Tel：0767-28-8585 ／ Fax：0767-28-8586</p>
+                <p>E-mail：rurikou.oshimizu@beach.ocn.ne.jp</p>
+              </div>
+            
+              <div class="p-store-card__info">
+                <div class="p-store-card__info-time">
+                  <p>営業時間：</p>
+                </div>
+                <div class="p-store-card__info-time-list">
+                  <p>月〜金：9:00〜18:00</p>
+                  <p>土：9:00〜11:00</p>
+                  <p>日・祝：定休日</p>
+                </div>
+              </div>
+            
+              <p class="p-store-card__body">
+                公共施設アステラスの向かいに位置する、地域密着型の薬局です。お茶を飲みながらお薬や健康のことをご相談いただける、あたたかい雰囲気づくりを心がけています。
+              </p>
+            
+              <div class="p-store-card__buttons">
+                <a class="c-button c-button--store-line" href="#">LINEで処方せんを送る</a>
+                <a class="c-button c-button--store-map" href="#" target="_blank" rel="noopener noreferrer">
+                  Googleマップで開く
+                </a>
+              </div>
+            </li>
+            <li class="p-store-card" data-store-area="ishikawa">
+              <div class="p-store-card__head">
+                <h2 class="p-store-card__title">小立野店</h2>
+                <span class="p-store-card__area">金沢市</span>
+              </div>
+            
+              <div class="p-store-card__badges">
+                <span>地域連携薬局</span>
+                <span>健康サポート薬局</span>
+              </div>
+            
+              <div class="p-store-card__image">
+                <img src="/assets/img/store/kodatsuno.jpg" alt="小立野店の外観" loading="lazy" />
+              </div>
+            
+              <div class="p-store-card__access">
+                <p>〒920-0942  石川県金沢市小立野1丁目2番3号</p>
+                <p>Tel：076-223-6070 ／ Fax：076-223-6071</p>
+                <p>E-mail：rurikou.kodatsuno@vega.ocn.ne.jp</p>
+              </div>
+            
+              <div class="p-store-card__info">
+                <div class="p-store-card__info-time">
+                  <p>営業時間：</p>
+                </div>
+                <div class="p-store-card__info-time-list">
+                  <p>月〜金：9:00〜18:30</p>
+                  <p>土：9:00〜13:00</p>
+                  <p>日・祝：定休日</p>
+                </div>
+              </div>
+            
+              <p class="p-store-card__body">
+                金沢医療センターや金沢大学附属病院からのバス通り沿いにある店舗です。地域のみなさまに親しまれる薬局を目指し、わかりやすい説明と丁寧な対応を心がけています。
+              </p>
+            
+              <div class="p-store-card__buttons">
+                <a class="c-button c-button--store-line" href="#">LINEで処方せんを送る</a>
+                <a class="c-button c-button--store-map" href="#" target="_blank" rel="noopener noreferrer">
+                  Googleマップで開く
+                </a>
+              </div>
+            </li>
+            <li class="p-store-card" data-store-area="ishikawa">
+              <div class="p-store-card__head">
+                <h2 class="p-store-card__title _small">瑠璃光けんこうの窓口（西金沢店）</h2>
+                <span class="p-store-card__area">金沢市</span>
+              </div>
+            
+              <div class="p-store-card__badges">
+                <span>地域連携薬局</span>
+              </div>
+            
+              <div class="p-store-card__image">
+                <img src="/assets/img/store/google-map.png" alt="瑠璃光けんこうの窓口の外観" loading="lazy" />
+              </div>
+            
+              <div class="p-store-card__access">
+                <p>〒921-8044  石川県金沢市米泉町10丁目1番160号</p>
+                <p>Tel：076-256-5278 ／ Fax：076-225-8678</p>
+                <p>E-mail：info@rurikou.jp</p>
+              </div>
+            
+              <div class="p-store-card__info">
+                <div class="p-store-card__info-time">
+                  <p>営業時間：</p>
+                </div>
+                <div class="p-store-card__info-time-list">
+                  <p>詳細は店舗へお問い合わせください。</p>
+                </div>
+              </div>
+            
+              <p class="p-store-card__body">
+                西金沢駅近くにある健康相談窓口です。お薬だけでなく、栄養やサプリメント、介護用品のご相談も幅広く受け付けています。
+              </p>
+            
+              <div class="p-store-card__buttons">
+                <a class="c-button c-button--store-line" href="#">LINEで処方せんを送る</a>
+                <a class="c-button c-button--store-map" href="#" target="_blank" rel="noopener noreferrer">
+                  Googleマップで開く
+                </a>
+              </div>
+            </li>
+            <li class="p-store-card" data-store-area="ishikawa">
+              <div class="p-store-card__head">
+                <h2 class="p-store-card__title">碁石ヶ峰登り口店</h2>
+                <span class="p-store-card__area">羽咋市</span>
+              </div>
+            
+              <div class="p-store-card__badges">
+              </div>
+            
+              <div class="p-store-card__image">
+                <img src="/assets/img/store/goishigamine.jpg" alt="碁石ヶ峰登り口店の外観" loading="lazy" />
+              </div>
+            
+              <div class="p-store-card__access">
+                <p>〒925-0072  石川県羽咋市大町イ8-8</p>
+                <p>Tel：0767-23-4368 ／ Fax：0767-23-4367</p>
+                <p>E-mail：rurikou.goishigamine@aioros.ocn.ne.jp</p>
+              </div>
+            
+              <div class="p-store-card__info">
+                <div class="p-store-card__info-time">
+                  <p>営業時間：</p>
+                </div>
+                <div class="p-store-card__info-time-list">
+                  <p>月火木金：9:00〜18:00</p>
+                  <p>水：9:00〜17:00</p>
+                  <p>土：9:00〜13:00</p>
+                  <p>日・祝：定休日</p>
+                </div>
+              </div>
+            
+              <p class="p-store-card__body">
+                自然豊かな環境にある薬局です。藤田医院に隣接し、在宅医療にも力を入れながら、地域のみなさまの健康をサポートしています。
+              </p>
+            
+              <div class="p-store-card__buttons">
+                <a class="c-button c-button--store-line" href="#">LINEで処方せんを送る</a>
+                <a class="c-button c-button--store-map" href="#" target="_blank" rel="noopener noreferrer">
+                  Googleマップで開く
+                </a>
+              </div>
+            </li>
+            <li class="p-store-card" data-store-area="ishikawa">
+              <div class="p-store-card__head">
+                <h2 class="p-store-card__title">西念店</h2>
+                <span class="p-store-card__area">金沢市</span>
+              </div>
+            
+              <div class="p-store-card__badges">
+                <span>地域連携薬局</span>
+              </div>
+            
+              <div class="p-store-card__image">
+                <img src="/assets/img/store/shop02-m.webp" alt="西念店の外観" loading="lazy" />
+              </div>
+            
+              <div class="p-store-card__access">
+                <p>〒920-0024  石川県金沢市西念3丁目16-23</p>
+                <p>Tel：076-204-6208 ／ Fax：076-204-6207</p>
+                <p>E-mail：rurikou.sainen@wind.ocn.ne.jp</p>
+              </div>
+            
+              <div class="p-store-card__info">
+                <div class="p-store-card__info-time">
+                  <p>営業時間：</p>
+                </div>
+                <div class="p-store-card__info-time-list">
+                  <p>月火木金：9:00〜18:00</p>
+                  <p>水：9:00〜17:00</p>
+                  <p>土：9:00〜13:00</p>
+                  <p>日・祝：定休日</p>
+                </div>
+              </div>
+            
+              <p class="p-store-card__body">
+                駅西エリアに位置し、車でも立ち寄りやすい立地です。お仕事帰りやお買い物のついでなど、さまざまなシーンでご利用いただいています。
+              </p>
+            
+              <div class="p-store-card__buttons">
+                <a class="c-button c-button--store-line" href="#">LINEで処方せんを送る</a>
+                <a class="c-button c-button--store-map" href="#" target="_blank" rel="noopener noreferrer">
+                  Googleマップで開く
+                </a>
+              </div>
+            </li>
+            <li class="p-store-card" data-store-area="ishikawa">
+              <div class="p-store-card__head">
+                <h2 class="p-store-card__title">疋田店</h2>
+                <span class="p-store-card__area">金沢市</span>
+              </div>
+            
+              <div class="p-store-card__badges">
+              </div>
+            
+              <div class="p-store-card__image">
+                <img src="/assets/img/store/shop03-m.webp" alt="疋田店の外観" loading="lazy" />
+              </div>
+            
+              <div class="p-store-card__access">
+                <p>〒920-0003  石川県金沢市疋田2丁目45番</p>
+                <p>Tel：076-258-2108 ／ Fax：076-258-2109</p>
+                <p>E-mail：rurikou.hikida@kind.ocn.ne.jp</p>
+              </div>
+            
+              <div class="p-store-card__info">
+                <div class="p-store-card__info-time">
+                  <p>営業時間：</p>
+                </div>
+                <div class="p-store-card__info-time-list">
+                  <p>月火木金：9:00〜18:00</p>
+                  <p>水：9:00〜17:00</p>
+                  <p>土：9:00〜13:00</p>
+                  <p>日・祝：定休日</p>
+                </div>
+              </div>
+            
+              <p class="p-store-card__body">
+                国道8号線や山側環状道路からのアクセスが良い店舗です。整形外科・脳神経外科の処方せんを中心に、地域の皆さまの健康をサポートしています。
+              </p>
+            
+              <div class="p-store-card__buttons">
+                <a class="c-button c-button--store-line" href="#">LINEで処方せんを送る</a>
+                <a class="c-button c-button--store-map" href="#" target="_blank" rel="noopener noreferrer">
+                  Googleマップで開く
+                </a>
+              </div>
+            </li>
+            <li class="p-store-card" data-store-area="ishikawa">
+              <div class="p-store-card__head">
+                <h2 class="p-store-card__title">津幡本店</h2>
+                <span class="p-store-card__area">津幡町</span>
+              </div>
+            
+              <div class="p-store-card__badges">
+                <span>地域連携薬局</span>
+                <span>健康サポート薬局</span>
+              </div>
+            
+              <div class="p-store-card__image">
+                <img src="/assets/img/store/asagiridai.jpg" alt="津幡本店の外観" loading="lazy" />
+              </div>
+            
+              <div class="p-store-card__access">
+                <p>〒929-0323 石川県河北郡津幡町字津幡ロ143番地2</p>
+                <p>Tel：076-288-8358 ／ Fax：076-288-8353</p>
+                <p>E-mail：rurikou.honten@arrow.ocn.ne.jp</p>
+              </div>
+            
+              <div class="p-store-card__info">
+                <div class="p-store-card__info-time">
+                  <p>営業時間：</p>
+                </div>
+                <div class="p-store-card__info-time-list">
+                  <p>月〜金：8:30〜18:30</p>
+                  <p>土：8:30〜18:00</p>
+                  <p>日・祝：定休日</p>
+                </div>
+              </div>
+            
+              <p class="p-store-card__body">
+                河北中央病院の目の前にある1号店です。門前の処方せんはもちろん、大学病院やさまざまな医療機関の処方せんにも対応し、地域のみなさまの健康を支えています。
+              </p>
+            
+              <div class="p-store-card__buttons">
+                <a class="c-button c-button--store-line" href="#">LINEで処方せんを送る</a>
+                <a class="c-button c-button--store-map" href="#" target="_blank" rel="noopener noreferrer">
+                  Googleマップで開く
+                </a>
+              </div>
+            </li>
+            <li class="p-store-card" data-store-area="ishikawa">
+              <div class="p-store-card__head">
+                <h2 class="p-store-card__title">津幡本店</h2>
+                <span class="p-store-card__area">津幡町</span>
+              </div>
+            
+              <div class="p-store-card__badges">
+                <span>地域連携薬局</span>
+                <span>健康サポート薬局</span>
+              </div>
+            
+              <div class="p-store-card__image">
+                <img src="/assets/img/store/sakiura.jpg" alt="津幡本店の外観" loading="lazy" />
+              </div>
+            
+              <div class="p-store-card__access">
+                <p>〒929-0323 石川県河北郡津幡町字津幡ロ143番地2</p>
+                <p>Tel：076-288-8358 ／ Fax：076-288-8353</p>
+                <p>E-mail：rurikou.honten@arrow.ocn.ne.jp</p>
+              </div>
+            
+              <div class="p-store-card__info">
+                <div class="p-store-card__info-time">
+                  <p>営業時間：</p>
+                </div>
+                <div class="p-store-card__info-time-list">
+                  <p>月〜金：8:30〜18:30</p>
+                  <p>土：8:30〜18:00</p>
+                  <p>日・祝：定休日</p>
+                </div>
+              </div>
+            
+              <p class="p-store-card__body">
+                河北中央病院の目の前にある1号店です。門前の処方せんはもちろん、大学病院やさまざまな医療機関の処方せんにも対応し、地域のみなさまの健康を支えています。
+              </p>
+            
+              <div class="p-store-card__buttons">
+                <a class="c-button c-button--store-line" href="#">LINEで処方せんを送る</a>
+                <a class="c-button c-button--store-map" href="#" target="_blank" rel="noopener noreferrer">
+                  Googleマップで開く
+                </a>
+              </div>
+            </li>
+            <li class="p-store-card" data-store-area="ishikawa">
+              <div class="p-store-card__head">
+                <h2 class="p-store-card__title">津幡本店</h2>
+                <span class="p-store-card__area">津幡町</span>
+              </div>
+            
+              <div class="p-store-card__badges">
+                <span>地域連携薬局</span>
+                <span>健康サポート薬局</span>
+              </div>
+            
+              <div class="p-store-card__image">
+                <img src="/assets/img/store/wakahino.jpg" alt="津幡本店の外観" loading="lazy" />
+              </div>
+            
+              <div class="p-store-card__access">
+                <p>〒929-0323 石川県河北郡津幡町字津幡ロ143番地2</p>
+                <p>Tel：076-288-8358 ／ Fax：076-288-8353</p>
+                <p>E-mail：rurikou.honten@arrow.ocn.ne.jp</p>
+              </div>
+            
+              <div class="p-store-card__info">
+                <div class="p-store-card__info-time">
+                  <p>営業時間：</p>
+                </div>
+                <div class="p-store-card__info-time-list">
+                  <p>月〜金：8:30〜18:30</p>
+                  <p>土：8:30〜18:00</p>
+                  <p>日・祝：定休日</p>
+                </div>
+              </div>
+            
+              <p class="p-store-card__body">
+                河北中央病院の目の前にある1号店です。門前の処方せんはもちろん、大学病院やさまざまな医療機関の処方せんにも対応し、地域のみなさまの健康を支えています。
+              </p>
+            
+              <div class="p-store-card__buttons">
+                <a class="c-button c-button--store-line" href="#">LINEで処方せんを送る</a>
+                <a class="c-button c-button--store-map" href="#" target="_blank" rel="noopener noreferrer">
+                  Googleマップで開く
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="p-top-internship js-fade-up" aria-labelledby="top-internship-title">
+        <div class="p-top-internship__container">
+          <img class="p-top-internship__bg" src="/assets/img/internship-area.webp" alt="薬局で働くスタッフの様子" />
+  
+          <div class="p-top-internship__content">
+            <a class="p-top-internship__card" href="work.html" aria-label="インターンシップ紹介ページへ">
+              <div class="p-top-internship__thumb-wrap">
+                <img class="p-top-internship__thumb" src="/assets/img/internship-person.jpg" alt="インターンシップ体験の様子"
+                  width="260" height="146" />
+              </div>
+              <div class="p-top-internship__body">
+                <p class="p-top-internship__title" id="top-internship-title">
+                  <span class="en">INTERNSHIP</span>
+                  <span>ーインターンシップー</span>
+                </p>
+                <p class="p-top-internship__text">薬学生向けの就業体験を実施しています</p>
+              </div>
+              <span class="p-top-internship__arrow" aria-hidden="true"></span>
+            </a>
+  
+            <p class="p-top-internship__catch">
+              お薬を通して<br />
+              いかに<br />
+              皆様のお役にたてるか
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="l-footer p-footer">
+      <div class="l-footer__inner">
+        <div class="l-footer__top">
+          <nav class="l-footer__nav" aria-label="フッターナビゲーション">
+            <div class="l-footer__nav-column">
+              <ul class="l-footer__list">
+                <li class="l-footer__item"><a class="l-footer__link" href="index.html">ホーム</a></li>
+                <li class="l-footer__item"><a class="l-footer__link" href="store.html">店舗一覧</a></li>
+                <li class="l-footer__item"><a class="l-footer__link" href="work.html">働き方</a></li>
+                <li class="l-footer__item"><a class="l-footer__link" href="column.html">コラム</a></li>
+                <li class="l-footer__item"><a class="l-footer__link" href="company.html">会社概要</a></li>
+              </ul>
+            </div>
+            <div class="l-footer__nav-column">
+              <ul class="l-footer__list">
+                <li class="l-footer__item">
+                  <a class="l-footer__link" href="#">各種指針・体制整備について</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+        <div class="l-footer__bottom">
+          <div class="l-footer__company">
+            <a class="l-footer__logo" href="index.html" aria-label="瑠璃光薬局トップページへ">
+              <img src="/assets/img/logo-wide.png" alt="瑠璃光薬局ロゴ" />
+            </a>
+            <div class="l-footer__company-body">
+              <p class="l-footer__name">株式会社 瑠璃光(るりこう)</p>
+              <p class="l-footer__address">【本社】〒920-0942 石川県金沢市小立野1丁目2番7号</p>
+              <p class="l-footer__tel">TEL: 076-256-5278</p>
+              <p class="l-footer__fax">FAX: 076-225-8678</p>
+            </div>
+          </div>
+
+          <div class="l-footer__cta">
+            <a class="c-button c-button--blue" href="work.html">
+              採用特設ページ
+              <span class="c-button-icon" aria-hidden="true"></span>
+            </a>
+            <a class="c-button c-button--yellow" href="#">
+              応募エントリー
+              <span class="c-button-icon" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+
+        <p class="p-footer__copy">© 2026 瑠璃光薬局 All Rights Reserved.</p>
+      </div>
+    </footer>
+    <script type="module" src="/assets/js/main.js"></script>
+  </body>
+</html>

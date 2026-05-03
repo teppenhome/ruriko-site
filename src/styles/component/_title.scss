@@ -1,0 +1,68 @@
+.p-top-title__heading {
+    text-align: center;
+    color: #1f2f75;
+    font-family: "Kiwi Maru", serif;
+  
+    &._left {
+      text-align: left;
+      padding-left: 180px;
+
+      @media (max-width: 768px) {
+        padding-left: 10px;
+      }
+    }
+  
+    &._left-no-padding {
+      text-align: left;
+      padding-left: 0;
+    }
+  }
+  
+  .p-top-title__en {
+    margin: 0;
+    font-size: clamp(2.5rem, 5vw, 3.0rem);
+    line-height: 1;
+    letter-spacing: 0.06em;
+  }
+  
+  .p-top-title__ja {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin: 8px 0 0;
+    font-size: 0.9rem;
+  }
+  
+  .p-top-title__ja::before,
+  .p-top-title__ja::after {
+    content: "";
+    width: 18px;
+    height: 1px;
+    background: currentColor;
+  }
+
+  .p-top-title__ja-l {
+    margin: 0;
+    font-size: clamp(2.5rem, 5vw, 3.0rem);
+    line-height: 1;
+    letter-spacing: 0.06em;
+    color: #1A2F74;
+  }
+  
+  .p-top-title__ja-m {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 2.4rem);
+    line-height: 1;
+    letter-spacing: 0.06em;
+    color: #1A2F74;
+  }
+
+//下層ページ
+.p-sub-mv__title {
+  font-family: "Kiwi Maru", serif;
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  font-weight: 500;
+  color: #1A2F74;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+}

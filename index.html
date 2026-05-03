@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>瑠璃光薬局</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body class="p-top">
+  <header class="p-header">
+    <div class="p-header__inner l-container">
+      <a class="p-header__logo" href="index.html">
+        <img src="/assets/img/logo-wide.png" alt="瑠璃光薬局" />
+      </a>
+      <nav class="p-header__nav" id="global-nav" aria-label="グローバルナビゲーション">
+        <ul class="p-header__list">
+          <li class="p-header__item">
+            <a class="p-header__link" href="index.html" aria-current="page">トップ</a>
+          </li>
+          <li class="p-header__item">
+            <a class="p-header__link" href="store.html">店舗一覧</a>
+          </li>
+          <li class="p-header__item">
+            <a class="p-header__link" href="company.html">会社情報</a>
+          </li>
+          <li class="p-header__item">
+            <a class="p-header__link" href="mission.html">ミッション</a>
+          </li>
+          <li class="p-header__item">
+            <a class="p-header__link" href="origin.html">社名の由来</a>
+          </li>
+          <li class="p-header__item">
+            <a class="p-header__link" href="work.html">働き方</a>
+          </li>
+          <li class="p-header__item">
+            <a class="p-header__link" href="column.html">コラム</a>
+          </li>
+          <li class="p-header__item">
+            <a class="p-header__link" href="privacy.html">プライバシー</a>
+          </li>
+        </ul>
+      </nav>
+      <button
+        type="button"
+        class="p-header__hamburger"
+        aria-expanded="false"
+        aria-controls="global-nav"
+        aria-label="メニューを開く"
+      >
+        <span class="p-header__hamburger-line" aria-hidden="true"></span>
+        <span class="p-header__hamburger-line" aria-hidden="true"></span>
+        <span class="p-header__hamburger-line" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="p-header__overlay" aria-hidden="true"></div>
+  </header>
+
+  <main class="l-main" id="main">
+
+    <section class="p-top-mv" aria-label="メインビジュアル">
+        <div class="p-top-mv__inner">
+          <div class="p-top-mv__visual">
+            <!-- SP用画像は assets に配置後に読み込まれる。未配置時は img の PC 画像にフォールバック -->
+            <div class="p-top-mv__picture">
+              <picture>
+                <source media="(max-width: 768px)" srcset="/assets/img/sp/top01-sp.png" type="image/png" />
+                <img
+                  class="p-top-mv__image"
+                  src="/assets/img/top01.png"
+                  alt="薬局で薬剤師が相談対応をしている様子"
+                  width="1200"
+                  height="760"
+                  decoding="async"
+                />
+              </picture>
+              <picture>
+                <source media="(max-width: 768px)" srcset="/assets/img/sp/top02-sp.png" type="image/png" />
+                <img
+                  class="p-top-mv__image"
+                  src="/assets/img/top02.png"
+                  alt="薬局で患者さまに寄り添って説明する様子"
+                  width="1200"
+                  height="760"
+                  decoding="async"
+                />
+              </picture>
+              <picture>
+                <source media="(max-width: 768px)" srcset="/assets/img/sp/top03-sp.png" type="image/png" />
+                <img
+                  class="p-top-mv__image"
+                  src="/assets/img/top03.png"
+                  alt="薬局スタッフが穏やかに対応している様子"
+                  width="1200"
+                  height="760"
+                  decoding="async"
+                />
+              </picture>
+            </div>
+
+            <div class="p-top-mv__content">
+              <h1 class="p-top-mv__title">
+                お薬を通して<br />
+                いかに<br />
+                皆様のお役にたてるか
+              </h1>
+            </div>
+
+            <div class="p-top-mv__buttons" aria-label="採用関連リンク">
+              <a class="c-button c-button--blue" href="work.html">
+                採用特設ページ
+                <span class="c-button-icon" aria-hidden="true"></span>
+              </a>
+              <a class="c-button c-button--yellow" href="#">
+                応募エントリー
+                <span class="c-button-icon" aria-hidden="true"></span>
+              </a>
+            </div>
+          </div>
+
+          <div class="p-top-mv__labels">
+            <p class="p-top-mv__label">
+              <span>創業1998年、地域とともに歩んできた薬局</span>
+            </p>
+            <p class="p-top-mv__label p-top-mv__label--right">
+              <span>石川・富山で24店舗を展開</span>
+            </p>
+          </div>
+
+          <div class="p-top-mv__shops" aria-label="店舗イメージ">
+            <img class="p-top-mv__shop p-top-mv__shop--01" src="/assets/img/shop01-m.webp" alt="瑠璃光薬局の店舗外観" />
+            <img class="p-top-mv__shop p-top-mv__shop--02" src="/assets/img/shop02-m.webp" alt="瑠璃光薬局の店舗外観" />
+            <img class="p-top-mv__shop p-top-mv__shop--03" src="/assets/img/shop03-m.webp" alt="瑠璃光薬局の店舗外観" />
+            <img class="p-top-mv__deco p-top-mv__deco--01" src="/assets/img/medicine01.png" alt="" aria-hidden="true" />
+            <img class="p-top-mv__deco p-top-mv__deco--02" src="/assets/img/medicine01.png" alt="" aria-hidden="true" />
+          </div>
+        </div>
+    </section>
+
+    <section class="p-top-about js-fade-up" data-delay="0.1" aria-labelledby="top-about-title">
+      <div class="l-container">
+        <div class="p-top-about__inner l-container">
+          <div class="p-top-title__heading">
+            <h2 class="p-top-title__en js-title-mask" id="top-about-title"><span>About</span></h2>
+            <p class="p-top-title__ja js-title-mask"><span>私たちについて</span></p>
+          </div>
+
+          <div class="p-top-about__content">
+            <div class="p-top-about__circle p-top-about__circle--left" aria-hidden="true"></div>
+            <div class="p-top-about__circle p-top-about__circle--right" aria-hidden="true"></div>
+
+            <div class="p-top-about__card p-top-about__card--blue">
+              <h2 class="p-top-about__card-title">地域に寄り添う調剤薬局グループ</h2>
+              <p class="p-top-about__text">
+                瑠璃光薬局グループは、石川県・富山県で地域の皆さまの「かかりつけ薬局」として、 医療・介護・在宅医療を支える保険調剤薬局チェーンです。
+              </p>
+            </div>
+
+            <img class="p-top-about__photo p-top-about__photo--01" src="/assets/img/about02-m.webp"
+              alt="薬局で働くスタッフの様子" />
+            <img class="p-top-about__photo p-top-about__photo--02" src="/assets/img/about01-m.webp" alt="笑顔の薬局スタッフ" />
+            <img class="p-top-about__photo p-top-about__photo--03" src="/assets/img/about03-m.webp"
+              alt="薬局内で調剤業務を行うスタッフ" />
+
+            <div class="p-top-about__card p-top-about__card--yellow">
+              <h2 class="p-top-about__card-title">瑠璃光薬局は、石川・富山を中心に展開する調剤薬局です</h2>
+              <p class="p-top-about__text">
+                「お薬を通していかに皆様のお役に立てるか」を第一に考えています。<br />近年、日本の医療のあり方は大きく変化しています。<br />医療に携わる薬剤師として何が大切であるかを考え、自己研鑽し、行動することが企業理念である「お薬を通していかに皆様のお役に立てるか」に結びつくと思っています。
+              </p>
+              <p class="p-top-about__text">
+                地域の皆様のお役に立てるよう、日々の薬局業務・在宅医療・地域連携に取り組んでいます。
+              </p>
+              <p class="p-top-about__text">
+                「瑠璃光薬局」という名称は、病気を癒やし安楽をもたらす薬師瑠璃光如来に由来し、ラピスラズリのように人々の健康と暮らしを照らす存在でありたいという願いを込めています。
+              </p>
+            </div>
+
+            <p class="p-top-about__label">
+              <span>世界一の安心と信頼を提供する薬局を目指して</span>
+            </p>
+
+            <img class="p-top-about__deco p-top-about__deco--medicine" src="/assets/img/medicine02.png" alt=""
+              aria-hidden="true" />
+            <img class="p-top-about__deco p-top-about__deco--bottle" src="/assets/img/medicine03.png" alt=""
+              aria-hidden="true" />
+            <img class="p-top-about__deco p-top-about__deco--illust" src="/assets/img/medicine04.png" alt=""
+              aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-top-shop js-fade-up" aria-labelledby="top-shop-title">
+      <div class="p-top-shop__inner">
+        <div class="p-top-title__heading _left l-container">
+          <h2 class="p-top-title__ja-l js-title-mask" id="top-shop-title"><span>店舗紹介</span></h2>
+        </div>
+
+        <div class="p-top-shop__panel">
+          <div class="p-top-shop__list">
+            <article class="p-top-shop-card">
+              <div class="p-top-shop-card__thumb">
+                <img class="p-top-shop-card__image" src="/assets/img/tsubata.jpg" alt="連根本店の外観" />
+              </div>
+              <h3 class="p-top-shop-card__name">
+                津幡本店 <span>石川県</span>
+              </h3>
+              <p class="p-top-shop-card__address">〒929-0323 石川県河北郡津幡町字津幡ロ143番地2</p>
+              <p class="p-top-shop-card__tel">Tel：076-288-8358</p>
+            </article>
+
+            <article class="p-top-shop-card">
+              <div class="p-top-shop-card__thumb">
+                <img class="p-top-shop-card__image" src="/assets/img/oshimizu.jpg" alt="押水店の外観" />
+              </div>
+              <h3 class="p-top-shop-card__name">
+                押水店 <span>石川県</span>
+              </h3>
+              <p class="p-top-shop-card__address">〒929-1311 石川県羽咋郡宝達志水町門前150-9</p>
+              <p class="p-top-shop-card__tel">Tel：0767-28-8585</p>
+            </article>
+
+            <article class="p-top-shop-card">
+              <div class="p-top-shop-card__thumb">
+                <img class="p-top-shop-card__image" src="/assets/img/shio.jpg" alt="志雄店の外観" />
+              </div>
+              <h3 class="p-top-shop-card__name">
+                志雄店 <span>石川県</span>
+              </h3>
+              <p class="p-top-shop-card__address">〒929-1425 石川県羽咋郡宝達志水町子浦ハ7-1</p>
+              <p class="p-top-shop-card__tel">Tel：0767-29-4877</p>
+            </article>
+
+            <article class="p-top-shop-card">
+              <div class="p-top-shop-card__thumb">
+                <img class="p-top-shop-card__image" src="/assets/img/kodatsuno.jpg" alt="小立野店の外観" />
+              </div>
+              <h3 class="p-top-shop-card__name">
+                小立野店 <span>石川県</span>
+              </h3>
+              <p class="p-top-shop-card__address">〒920-0942 石川県金沢市小立野1丁目2番3号</p>
+              <p class="p-top-shop-card__tel">Tel：076-223-6070</p>
+            </article>
+
+            <article class="p-top-shop-card">
+              <div class="p-top-shop-card__thumb">
+                <img class="p-top-shop-card__image" src="/assets/img/kodatsuno.jpg" alt="小立野店の外観" />
+              </div>
+              <h3 class="p-top-shop-card__name">
+                小立野店 <span>石川県</span>
+              </h3>
+              <p class="p-top-shop-card__address">〒920-0942 石川県金沢市小立野1丁目2番3号</p>
+              <p class="p-top-shop-card__tel">Tel：076-223-6070</p>
+            </article>
+          </div>
+
+          <div class="p-top-shop__bottom">
+            <a class="c-button c-button--yellow" href="store.html">
+              店舗一覧へ
+              <span class="c-button-icon" aria-hidden="true"></span>
+            </a>
+
+            <div class="p-top-shop__arrows" aria-hidden="true">
+              <button class="p-top-shop__arrow p-top-shop__arrow--prev" type="button"></button>
+              <button class="p-top-shop__arrow p-top-shop__arrow--next" type="button"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-top-recruit js-fade-up" data-delay="0.2" aria-labelledby="top-recruit-title">
+      <div class="l-container">
+        <div class="p-top-recruit__inner">
+          <p class="p-top-recruit__lead">
+            「安心」を届ける<span class="u-sp-br"></span>プロフェッショナルが、<br />
+            一番安心して働ける場所へ
+          </p>
+
+          <div class="p-top-recruit__box">
+            <div class="p-top-recruit__content">
+              <div class="p-top-title__heading _left-no-padding">
+                <h2 class="p-top-title__ja-l js-title-mask" id="top-recruit-title"><span>採用情報</span></h2>
+              </div>
+              <p class="p-top-recruit__text">
+                薬剤師・医療事務・管理栄養士など、多職種の採用情報を発信しています。 地域医療に貢献したい方、在宅医療や医療DXに挑戦したい方を歓迎します。
+              </p>
+              <p class="p-top-recruit__text">
+                採用特設ページでは、働き方・教育体制・福利厚生・先輩インタビューなど、 瑠璃光薬局でのキャリアや雰囲気を詳しくご紹介しています。ご興味のある方は、まずは採用特設ページをご覧いただき、
+                そのままオンラインでエントリーしていただけます。
+              </p>
+
+              <div class="p-top-recruit__buttons">
+                <a class="c-button c-button--blue" href="work.html">
+                  採用特設ページはこちら
+                  <span class="c-button-icon" aria-hidden="true"></span>
+                </a>
+                <a class="c-button c-button--yellow" href="#">
+                  応募はこちら
+                  <span class="c-button-icon" aria-hidden="true"></span>
+                </a>
+              </div>
+            </div>
+
+            <img class="p-top-recruit__deco" src="/assets/img/medicine05.png" alt="" aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="p-top-bg-wrap">
+      <section class="p-top-column js-fade-up" aria-labelledby="top-column-title">
+        <div class="p-top-column__inner">
+  
+          <div class="p-top-column__head">
+            <div class="p-top-title__heading">
+              <h2 class="p-top-title__ja-m js-title-mask" id="top-column-title"><span>瑠璃光薬局コラム</span></h2>
+            </div>
+            <div class="p-top-column__logo-wrap">
+              <img class="p-top-column__logo" src="/assets/img/ruriko-logo-mark.png" alt="瑠璃光薬局マーク" aria-hidden="true" />
+            </div>
+            <p class="p-top-column__lead">お薬と健康の情報をお届けするコラムです。</p>
+          </div>
+  
+          <article class="p-top-column__pickup">
+            <p class="p-top-column__pickup-label">Pick up</p>
+            <img class="p-top-column__pickup-image" src="/assets/img/column/blog01.jpg" alt="花粉症対策をしている女性" />
+            <div class="p-top-column__pickup-body">
+              <time class="p-top-column__date" datetime="2024-04-16">2024 04.16</time>
+              <h3 class="p-top-column__pickup-title">花粉症対策と早めのケアの重要性</h3>
+              <p class="p-top-column__excerpt">
+                春先になると、多くの方が花粉症の症状に悩まされます。くしゃみや鼻水、目のかゆみなどは、日常生活にも大きな影…
+              </p>
+            </div>
+          </article>
+  
+          <div class="p-top-column__list">
+            <article class="p-top-column-card">
+              <img class="p-top-column-card__image" src="/assets/img/column/blog02.jpg" alt="薬局で相談する様子" />
+              <time class="p-top-column-card__date" datetime="2024-04-16">2024 04.16</time>
+              <h3 class="p-top-column-card__title">薬局でできる健康相談とは？</h3>
+              <p class="p-top-column-card__excerpt">るだけの場所ではなく、健康に関するさまざまな相談ができる身近な存…</p>
+            </article>
+  
+            <article class="p-top-column-card">
+              <img class="p-top-column-card__image" src="/assets/img/column/blog05-mini.webp" alt="薬を手に持つ様子" />
+              <time class="p-top-column-card__date" datetime="2024-04-16">2024 04.16</time>
+              <h3 class="p-top-column-card__title">お薬の正しい飲み方と注意点について</h3>
+              <p class="p-top-column-card__excerpt">お薬は、正しく服用することで十分な効果を発揮します。しかし、飲み方を誤ると、効果が…</p>
+            </article>
+  
+            <article class="p-top-column-card">
+              <img class="p-top-column-card__image" src="/assets/img/column/blog03.jpg" alt="薬剤師が受付で対応している様子" />
+              <time class="p-top-column-card__date" datetime="2024-04-16">2024 04.16</time>
+              <h3 class="p-top-column-card__title">薬局でできる健康相談とは？</h3>
+              <p class="p-top-column-card__excerpt">薬局はお薬を受け取るだけの場所ではなく、健康に関するさまざまな相談ができる身近な存…</p>
+            </article>
+  
+            <article class="p-top-column-card">
+              <img class="p-top-column-card__image" src="/assets/img/column/blog04.jpg" alt="疲れた表情で目元を押さえる女性" />
+              <time class="p-top-column-card__date" datetime="2024-04-16">2024 04.16</time>
+              <h3 class="p-top-column-card__title">季節の変わり目に注意したい体調管理</h3>
+              <p class="p-top-column-card__excerpt">季節の変わり目は、気温や気圧の変化により体調を崩しやすい時期です。特に春や秋は、自…</p>
+            </article>
+  
+            <article class="p-top-column-card">
+              <img class="p-top-column-card__image" src="/assets/img/column/blog02.jpg" alt="薬剤師が説明している様子" />
+              <time class="p-top-column-card__date" datetime="2024-04-16">2024 04.16</time>
+              <h3 class="p-top-column-card__title">相談とは？</h3>
+              <p class="p-top-column-card__excerpt">るだけの場所ではなく、健康に関するさまざまな相談ができる身近な存…</p>
+            </article>
+          </div>
+  
+  
+          <div class="p-top-column__button-wrap">
+            <a class="c-button c-button--yellow" href="column.html">
+              コラム一覧へ
+              <span class="c-button-icon" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+      </section>
+  
+      <section class="p-top-sns js-fade-up" aria-labelledby="top-sns-title">
+        <div class="p-top-sns__inner">
+          <div class="p-top-title__heading _left-no-padding">
+            <h2 class="p-top-title__ja-l js-title-mask" id="top-sns-title"><span>SNS</span></h2>
+          </div>
+  
+          <div class="p-top-sns__content">
+            <div class="p-top-sns__group">
+              <h3 class="p-top-sns__group-title">公式SNS</h3>
+  
+              <ul class="p-top-sns__list">
+                <li class="p-top-sns__item">
+                  <a class="p-top-sns__link p-top-sns__link--ameblo" href="#" target="_blank" rel="noopener">
+                    <span class="p-top-sns__icon">
+                      <img src="/assets/img/icons/ameblo.png" alt="" aria-hidden="true" />
+                    </span>
+                    <span class="p-top-sns__name">アメブロ</span>
+                  </a>
+                </li>
+  
+                <li class="p-top-sns__item">
+                  <a class="p-top-sns__link p-top-sns__link--instagram" href="#" target="_blank" rel="noopener">
+                    <span class="p-top-sns__icon _scall">
+                      <img src="/assets/img/icons/insta.png" alt="" aria-hidden="true" />
+                    </span>
+                    <span class="p-top-sns__name">インスタ</span>
+                  </a>
+                </li>
+  
+                <li class="p-top-sns__item">
+                  <a class="p-top-sns__link p-top-sns__link--x" href="#" target="_blank" rel="noopener">
+                    <span class="p-top-sns__icon">
+                      <img src="/assets/img/icons/x.png" alt="" aria-hidden="true" />
+                    </span>
+                    <span class="p-top-sns__name">エックス</span>
+                  </a>
+                </li>
+  
+                <li class="p-top-sns__item">
+                  <a class="p-top-sns__link p-top-sns__link--youtube" href="#" target="_blank" rel="noopener">
+                    <span class="p-top-sns__icon">
+                      <img src="/assets/img/icons/x.png" alt="" aria-hidden="true" />
+                    </span>
+                    <span class="p-top-sns__name">YouTube</span>
+                  </a>
+                </li>
+  
+                <li class="p-top-sns__item">
+                  <a class="p-top-sns__link p-top-sns__link--tiktok" href="#" target="_blank" rel="noopener">
+                    <span class="p-top-sns__icon _scall">
+                      <img src="/assets/img/icons/tiktok.png" alt="" aria-hidden="true" />
+                    </span>
+                    <span class="p-top-sns__name">TikTok</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+  
+            <div class="p-top-sns__group p-top-sns__group--recruit">
+              <h3 class="p-top-sns__group-title">採用SNS</h3>
+  
+              <ul class="p-top-sns__list">
+                <li class="p-top-sns__item">
+                  <a class="p-top-sns__link p-top-sns__link--instagram" href="#" target="_blank" rel="noopener">
+                    <span class="p-top-sns__icon _scall">
+                      <img src="/assets/img/icons/insta.png" alt="" aria-hidden="true" />
+                    </span>
+                    <span class="p-top-sns__name">インスタ</span>
+                  </a>
+                </li>
+  
+                <li class="p-top-sns__item">
+                  <a class="p-top-sns__link p-top-sns__link--x" href="#" target="_blank" rel="noopener">
+                    <span class="p-top-sns__icon">
+                      <img src="/assets/img/icons/x.png" alt="" aria-hidden="true" />
+                    </span>
+                    <span class="p-top-sns__name">エックス</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+  
+            <div class="p-top-sns__message">
+              <p class="p-top-sns__bubble">
+                地域のみなさま向け情報と、<br />
+                学生・求職者向け情報をそれぞれのSNSで発信しています！
+              </p>
+              <div class="p-top-sns__person">
+                <img src="/assets/img/person01-s.webp" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="p-top-column__circle p-top-column__circle--01" aria-hidden="true"></div>
+      <div class="p-top-column__circle p-top-column__circle--02" aria-hidden="true"></div>
+    </div>
+
+    <section class="p-top-internship js-fade-up" aria-labelledby="top-internship-title">
+      <div class="p-top-internship__container">
+        <img class="p-top-internship__bg" src="/assets/img/internship-area.webp" alt="薬局で働くスタッフの様子" />
+
+        <div class="p-top-internship__content">
+          <a class="p-top-internship__card" href="work.html" aria-label="インターンシップ紹介ページへ">
+            <div class="p-top-internship__thumb-wrap">
+              <img class="p-top-internship__thumb" src="/assets/img/internship-person.jpg" alt="インターンシップ体験の様子"
+                width="260" height="146" />
+            </div>
+            <div class="p-top-internship__body">
+              <p class="p-top-internship__title" id="top-internship-title">
+                <span class="en">INTERNSHIP</span>
+                <span>ーインターンシップー</span>
+              </p>
+              <p class="p-top-internship__text">薬学生向けの就業体験を実施しています</p>
+            </div>
+            <span class="p-top-internship__arrow" aria-hidden="true"></span>
+          </a>
+
+          <p class="p-top-internship__catch">
+            お薬を通して<br />
+            いかに<br />
+            皆様のお役にたてるか
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="l-footer p-footer">
+    <div class="l-footer__inner">
+      <div class="l-footer__top">
+        <nav class="l-footer__nav" aria-label="フッターナビゲーション">
+          <div class="l-footer__nav-column">
+            <ul class="l-footer__list">
+              <li class="l-footer__item"><a class="l-footer__link" href="index.html">ホーム</a></li>
+              <li class="l-footer__item"><a class="l-footer__link" href="store.html">店舗一覧</a></li>
+              <li class="l-footer__item"><a class="l-footer__link" href="work.html">働き方</a></li>
+              <li class="l-footer__item"><a class="l-footer__link" href="column.html">コラム</a></li>
+              <li class="l-footer__item"><a class="l-footer__link" href="company.html">会社概要</a></li>
+            </ul>
+          </div>
+          <div class="l-footer__nav-column">
+            <ul class="l-footer__list">
+              <li class="l-footer__item">
+                <a class="l-footer__link" href="#">各種指針・体制整備について</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="l-footer__bottom">
+        <div class="l-footer__company">
+          <a class="l-footer__logo" href="index.html" aria-label="瑠璃光薬局トップページへ">
+            <img src="/assets/img/logo-wide.png" alt="瑠璃光薬局ロゴ" />
+          </a>
+          <div class="l-footer__company-body">
+            <p class="l-footer__name">株式会社 瑠璃光(るりこう)</p>
+            <p class="l-footer__address">【本社】〒920-0942 石川県金沢市小立野1丁目2番7号</p>
+            <p class="l-footer__tel">TEL: 076-256-5278</p>
+            <p class="l-footer__fax">FAX: 076-225-8678</p>
+          </div>
+        </div>
+
+        <div class="l-footer__cta">
+          <a class="c-button c-button--blue" href="work.html">
+            採用特設ページ
+            <span class="c-button-icon" aria-hidden="true"></span>
+          </a>
+          <a class="c-button c-button--yellow" href="#">
+            応募エントリー
+            <span class="c-button-icon" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+
+      <p class="p-footer__copy">© 2026 瑠璃光薬局 All Rights Reserved.</p>
+    </div>
+  </footer>
+  <script type="module" src="/assets/js/main.js"></script>
+</body>
+
+</html>

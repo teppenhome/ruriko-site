@@ -1,0 +1,10 @@
+// .l-container
+.l-container {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--px);
+
+  @media (max-width: 768px) {
+    padding-inline: 5px;
+  }
+}

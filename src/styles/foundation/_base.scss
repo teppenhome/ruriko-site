@@ -1,0 +1,41 @@
+:root {
+  --color-main: #000;
+  --color-sub: #666;
+  --text: #333;
+  --bg: #fff;
+  --container: 1200px;
+  --px: 16px;
+}
+
+body {
+  background: #F7F8FA;
+  font-family:
+    "Noto Sans JP",
+    "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+}
+
+/* トップ：装飾やセクションのはみ出しで横スクロールが出ないようにする */
+body.p-top {
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  /* スマホでセクション左右に 16〜24px 程度の余白を確保 */
+  :root {
+    --px: clamp(16px, 5vw, 24px);
+  }
+}
+
+.u-sp-br {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .u-sp-br {
+    display: block;
+  }
+}

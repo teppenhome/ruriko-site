@@ -1,0 +1,1644 @@
+// メインビジュアル（トップ）
+.js-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.js-fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js-title-mask {
+  overflow: hidden;
+}
+
+.js-title-mask span {
+  display: inline-block;
+  transform: translateY(110%);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.js-title-mask.is-visible span {
+  transform: translateY(0);
+}
+
+.p-top-mv {
+  padding: 0 0 72px;
+  margin-top: -160px;
+  
+}
+
+.p-top-mv__inner {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.p-top-mv__visual {
+  position: relative;
+}
+
+.p-top-mv__picture {
+  position: relative;
+  display: block;
+  height: 760px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #f7f8fa;
+}
+
+/* 各 picture を同一枠に重ねる（フェード用） */
+.p-top-mv__picture > picture {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.p-top-mv__image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+}
+
+.p-top-mv__image.is-active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.p-top-mv__content {
+  position: absolute;
+  z-index: 1;
+  left: 13%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+
+  @media (max-width: 768px) {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+  }
+}
+
+.p-top-mv__title {
+  margin-top: 240px;
+  font-size: clamp(1.15rem, 4vw, 1.85rem);
+  font-weight: 500;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+
+  @media (max-width: 768px) {
+    margin-top: 100px;
+    white-space: nowrap;
+  }
+}
+
+.p-top-mv__buttons {
+  position: absolute;
+  z-index: 1;
+  right: 19%;
+  bottom: 8%;
+  display: grid;
+  gap: 12px;
+  width: 220px;
+}
+
+.p-top-mv__buttons .c-button {
+  width: 100%;
+}
+
+.p-top-mv__labels {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.p-top-mv__label {
+  position: relative;
+  width: fit-content;
+  min-width: min(620px, 100%);
+  margin-inline: 12%;
+  padding: 12px 40px;
+  border-radius: 999px;
+  background: #3CB9D7;
+  font-size: clamp(1rem, 1.8vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateX(-40px);
+
+  /* 初期はアニメーション無効 */
+  transition: none;
+
+  will-change: opacity, transform;
+
+  /* ノイズ */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("/assets/img/zarazara-l.webp") repeat;
+    background-size: 300px;
+    mix-blend-mode: screen;
+    opacity: 0.45;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+    color: #00468b;
+  }
+}
+
+/* 右側は逆方向 */
+.p-top-mv__label--right {
+  margin-left: auto;
+  margin-right: 8%;
+  transform: translateX(40px);
+}
+
+.p-top-mv__labels.is-ready .p-top-mv__label {
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.p-top-mv__label.is-show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  /* ヒーロー：PC 用の -160px はスマホで下とのバランスが悪いため控えめに */
+  .p-top-mv {
+    margin-top: -20px;
+    padding: 0 0 48px;
+  }
+
+  .p-top-mv__visual {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  /* 横長を無理に詰めない。SP 用 source 未配置時も aspect-ratio で破綻しにくくする */
+  .p-top-mv__picture {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* ←ここが一番重要（画面いっぱい） */
+    max-height: none; /* ←制限解除 */
+    aspect-ratio: auto; /* ←固定比率やめる */
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .p-top-mv__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ←これが超重要 */
+    object-position: center;
+  }
+
+  .p-top-mv__picture > picture {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+  }
+
+  .p-top-mv__buttons {
+    position: relative;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: 70%;
+    max-width: 400px;
+    margin: 16px auto 0;
+    transform: none;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .p-top-mv__buttons .c-button {
+    width: 100%;
+    max-width: none;
+    justify-content: center;
+  }
+
+  .p-top-mv__label {
+    min-width: 0;
+    width: 95%;
+    margin-inline: 0;
+    padding: 12px 18px;
+    font-size: clamp(0.9rem, 3.5vw, 1rem);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.p-top-mv__shops {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+  max-width: 920px;
+  margin: 28px auto 0;
+  padding: 0 120px 80px 48px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    max-width: 100%;
+    margin: 28px auto 0;
+    padding: 0 16px 40px;
+  }
+}
+
+/* =========================
+  共通（初期状態）
+========================= */
+.p-top-mv__shop {
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+  border-radius: 999px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  opacity: 0;
+  transform: translateY(calc(var(--y, 0px) - 24px));
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+/* =========================
+  個別位置
+========================= */
+.p-top-mv__shop--01 {
+  width: 34%;
+  --y: 0px;
+
+  @media (max-width: 768px) {
+    width: 70%;
+    margin-right: auto;
+  }
+}
+
+.p-top-mv__shop--02 {
+  width: 28%;
+  --y: 38px;
+
+  @media (max-width: 768px) {
+    width: 60%;
+  }
+}
+
+.p-top-mv__shop--03 {
+  width: 20%;
+  --y: 62px;
+
+  @media (max-width: 768px) {
+    width: 50%;
+    margin-left: auto;
+  }
+}
+
+/* =========================
+  表示状態
+========================= */
+.p-top-mv__shop.is-show {
+  opacity: 1;
+  transform: translateY(var(--y, 0px));
+}
+
+/* =========================
+  デコ
+========================= */
+.p-top-mv__deco {
+  position: absolute;
+  display: block;
+  width: clamp(34px, 3.8vw, 56px);
+  opacity: 0;
+  pointer-events: none;
+
+  transform:
+    translateY(-16px)
+    rotate(var(--rotate, 0deg));
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.p-top-mv__deco.is-show {
+  opacity: 1;
+  transform:
+    translateY(0)
+    rotate(var(--rotate, 0deg));
+}
+
+.p-top-mv__deco--01 {
+  right: 14%;
+  bottom: -10px;
+  --rotate: -18deg;
+
+  @media (max-width: 768px) {
+    bottom: -100px;
+  }
+}
+
+.p-top-mv__deco--02 {
+  right: 6%;
+  bottom: -20px;
+  width: clamp(28px, 3vw, 42px);
+  --rotate: 195deg;
+
+  @media (max-width: 768px) {
+    bottom: -70px;
+  }
+}
+
+//about
+.p-top-about {
+  position: relative;
+  padding: 80px 0 120px;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 80px 0 740px;
+  }
+}
+
+.p-top-about__inner {
+  position: relative;
+}
+
+.p-top-about__content {
+  position: relative;
+  min-height: 920px;
+  margin-top: 40px;
+}
+
+.p-top-about__circle {
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow:
+    0 0 28px rgba(0, 98, 255, 0.4),
+    inset 0 0 0 1px rgba(0, 98, 255, 0.1);
+}
+
+.p-top-about__circle--left {
+  left: 0;
+  top: -160px;
+  width: 700px;
+  height: 700px;
+
+  @media (max-width: 768px) {
+    left: -50px;
+    top: -150px;
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.p-top-about__circle--right {
+  right: -100px;
+  bottom: -180px;
+  width: 900px;
+  height: 900px;
+
+  @media (max-width: 768px) {
+    right: -50px;
+    bottom: 300px;
+    width: 400px;
+    height: 400px;
+  }
+}
+
+.p-top-about__card,
+.p-top-about__photo,
+.p-top-about__label,
+.p-top-about__deco {
+  position: absolute;
+  z-index: 1;
+}
+
+.p-top-about__card {
+  border-radius: 20px;
+  padding: 36px 44px;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 22px;
+  }
+}
+
+.p-top-about__card::before,
+.p-top-about__label::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/assets/img/zarazara-l.webp") repeat;
+  background-size: 300px;
+  mix-blend-mode: screen;
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.p-top-about__card > *,
+.p-top-about__label span {
+  position: relative;
+  z-index: 1;
+}
+
+.p-top-about__card--blue {
+  left: 18%;
+  top: 80px;
+  width: 500px;
+  background: #3CB9D7;
+
+  @media (max-width: 768px) {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    width: 100%;
+  }
+}
+
+.p-top-about__card--yellow {
+  right: 0;
+  top: 360px;
+  width: 700px;
+  background: #F3D900;
+
+  @media (max-width: 768px) {
+    right: 50%;
+    transform: translateX(50%);
+    top: 850px;
+    width: 100%;
+  }
+}
+
+.p-top-about__card-title {
+  margin: 0 0 20px;
+  color: #111;
+  font-weight: 500;
+  font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+  font-family: "Kiwi Maru", serif;
+}
+
+.p-top-about__text {
+  margin: 0;
+  color: #111;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 2;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
+}
+
+.p-top-about__text + .p-top-about__text {
+  margin-top: 16px;
+}
+
+.p-top-about__photo {
+  object-fit: cover;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.14);
+}
+
+.p-top-about__photo--01 {
+  right: 20%;
+  top: 80px;
+  width: 180px;
+  height: 260px;
+  border-radius: 90px 90px 8px 8px;
+
+  @media (max-width: 768px) {
+    top: 380px;
+    right: auto;
+    left: 0;
+  }
+}
+
+.p-top-about__photo--02 {
+  right: 2%;
+  top: -20px;
+  width: 170px;
+  height: 260px;
+  border-radius: 90px 90px 8px 8px;
+
+  @media (max-width: 768px) {
+    top: 250px;
+    right: 0;
+  }
+}
+
+.p-top-about__photo--03 {
+  left: 7%;
+  top: 430px;
+  width: 250px;
+  height: 380px;
+  border-radius: 120px 120px 8px 8px;
+
+  @media (max-width: 768px) {
+    left: auto;
+    right: 0;
+    top: 550px;
+    width: 170px;
+    height: 260px;
+  }
+}
+
+.p-top-about__label {
+  left: 18%;
+  bottom: 0;
+  width: min(560px, 60%);
+  padding: 14px 36px;
+  border-radius: 999px;
+  background: #3CB9D7;
+  color: #111111;
+  font-size: 1.35rem;
+  text-align: center;
+  overflow: hidden;
+  font-family: "Kiwi Maru", serif;
+  font-weight: 500;
+
+  @media (max-width: 768px) {
+    font-size: 1.15rem;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -600px;
+  }
+}
+
+.p-top-about__deco--medicine {
+  left: 22%;
+  top: 340px;
+  width: 80px;
+
+  @media (max-width: 768px) {
+    top: 280px;
+    left: 12%;
+    width: 60px;
+  }
+}
+
+.p-top-about__deco--bottle {
+  right: 0;
+  top: 750px;
+  width: 72px;
+  transform: rotate(12deg);
+}
+
+.p-top-about__deco--illust {
+  right: 12%;
+  bottom: -60px;
+  width: 180px;
+  border-radius: 50%;
+
+  @media (max-width: 768px) {
+    right: 0;
+    bottom: -700px;
+    width: 120px;
+  }
+}
+
+// shop
+.p-top-shop {
+  position: relative;
+  padding: 88px 0 120px;
+  overflow: hidden;
+  background: #3CB9D7;
+
+  @media (max-width: 768px) {
+    padding: 40px 0 80px;
+  }
+}
+
+.p-top-shop::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/assets/img/zarazara-l.webp") repeat;
+  background-size: 300px;
+  mix-blend-mode: screen;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.p-top-shop__inner {
+  position: relative;
+  z-index: 1;
+  margin-inline: auto;
+}
+
+.p-top-shop__panel {
+  position: relative;
+  margin-top: 40px;
+  margin-left: 48px;
+  padding: 88px 64px 64px 120px;
+  border-radius: 280px 0 0 280px;
+  background: #fff;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    margin-left: 5px;
+    border-radius: 140px 0 0 140px;
+    padding: 40px 24px 32px 50px;
+  }
+}
+
+.p-top-shop__list {
+  display: flex;
+  gap: 28px;
+}
+
+.p-top-shop-card {
+  flex: 0 0 260px;
+}
+
+.p-top-shop-card__thumb {
+  overflow: hidden;
+  border-radius: 16px;
+  aspect-ratio: 1.55 / 1;
+}
+
+.p-top-shop-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transform: scale(1.05);
+}
+
+.p-top-shop-card__name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 14px 0 8px;
+  color: #111;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.p-top-shop-card__name span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  padding: 3px 10px;
+  border: 1px solid #4b8ef7;
+  border-radius: 999px;
+  color: #4b8ef7;
+  font-size: 0.75rem;
+  line-height: 1.2;
+}
+
+.p-top-shop-card__address,
+.p-top-shop-card__tel {
+  margin: 0;
+  color: #111;
+  font-size: 0.78rem;
+  line-height: 1.8;
+}
+
+.p-top-shop__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 180px;
+  margin-top: 52px;
+
+  @media (max-width: 768px) {
+    gap: 30px;
+    margin-top: 32px;
+  }
+}
+
+.p-top-shop__arrows {
+  display: flex;
+  gap: 14px;
+}
+
+.p-top-shop__arrow {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border: 1.5px solid #1f2f75;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.p-top-shop__arrow::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid #1f2f75;
+  border-right: 2px solid #1f2f75;
+}
+
+.p-top-shop__arrow--prev::before {
+  left: 52%;
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.p-top-shop__arrow--next::before {
+  left: 46%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+// recruit
+.p-top-recruit {
+  position: relative;
+  padding: 64px 0 80px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)),
+    url("/assets/img/recruit-bg.jpg") center / cover no-repeat;
+
+  @media (max-width: 768px) {
+    padding: 30px 0 20px;
+  }
+}
+
+.p-top-recruit::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.p-top-recruit__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.p-top-recruit__lead {
+  margin: 0 0 190px;
+  color: #1f2f75;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+    margin-left: 10px;
+    margin-bottom: 100px;
+  }
+}
+
+.p-top-recruit__box {
+  position: relative;
+  width: 100%;
+  padding: 44px 56px 48px;
+  background: rgba(255, 255, 255, 0.78);
+
+  @media (max-width: 768px) {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.5);
+  }
+}
+
+.p-top-recruit__text {
+  margin: 40px 0 0;
+  color: #111;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.9;
+
+  @media (max-width: 768px) {
+    font-size: 0.85rem;
+    margin-top: 20px;
+  }
+}
+
+.p-top-recruit__text + .p-top-recruit__text {
+  margin-top: 8px;
+}
+
+.p-top-recruit__buttons {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  margin-top: 28px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+  }
+}
+
+.p-top-recruit__buttons .c-button {
+  min-width: 260px;
+}
+
+.p-top-recruit__deco {
+  position: absolute;
+  right: 56px;
+  bottom: 28px;
+  width: 86px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.p-top-column {
+  position: relative;
+  padding: 120px 0 140px;
+  overflow: hidden;
+  background: transparent;
+
+  @media (max-width: 768px) {
+    padding: 120px 0 30px;
+  }
+}
+
+.p-top-column__inner {
+  position: relative;
+  z-index: 0;
+  width: min(1200px, calc(100% - 48px));
+  margin-inline: auto;
+
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  grid-template-areas:
+    "head pickup"
+    "list list"
+    "button button";
+  column-gap: 80px;
+  row-gap: 72px;
+}
+
+.p-top-bg-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.p-top-column,
+.p-top-sns {
+  position: relative;
+  z-index: 1;
+}
+
+/* 円は後ろ */
+.p-top-column__circle {
+  position: absolute;
+  z-index: 0;
+}
+
+/* 背景の円 */
+.p-top-column__circle {
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow:
+  0 0 28px rgba(0, 98, 255, 0.4),
+  inset 0 0 0 1px rgba(0, 98, 255, 0.1);
+  pointer-events: none;
+}
+
+.p-top-column__circle--01 {
+  right: 10%;
+  top: -80px;
+  width: 720px;
+  height: 720px;
+
+  @media (max-width: 768px) {
+    right: -50px;
+    top: 0;
+    width: 400px;
+    height: 400px;
+  }
+}
+
+.p-top-column__circle--02 {
+  left: -200px;
+  top: 300px;
+  width: 1200px;
+  height: 1200px;
+
+  @media (max-width: 768px) {
+    left: -50px;
+    top: 400px;
+    width: 400px;
+    height: 400px;
+  }
+}
+
+/* 見出し */
+.p-top-column__head {
+  grid-area: head;
+  width: 360px;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+}
+
+.p-top-column__logo-wrap {
+  width: 100px;
+  height: 100px;
+  margin: 28px auto 28px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.p-top-column__logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transform: scale(1.2);
+}
+
+.p-top-column__lead {
+  margin: 0;
+  color: #1f2f75;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  font-family: "Kiwi Maru", serif;
+}
+
+/* Pick up */
+.p-top-column__pickup {
+  grid-area: pickup;
+  position: relative;
+  width: 330px;
+  justify-self: center;
+}
+
+.p-top-column__pickup-label {
+  position: absolute;
+  left: -28px;
+  top: -22px;
+  z-index: 2;
+  margin: 0;
+  min-width: 130px;
+  padding: 10px 24px;
+  border-radius: 999px;
+  background: #f3d900;
+  color: #1f2f75;
+  font-family: "Kiwi Maru", serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.p-top-column__pickup-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.65 / 1;
+  object-fit: cover;
+  border-radius: 0 0 18px 18px;
+}
+
+.p-top-column__pickup-body {
+  margin-top: 16px;
+}
+
+.p-top-column__date,
+.p-top-column-card__date {
+  display: block;
+  margin-bottom: 8px;
+  color: #111;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.p-top-column__pickup-title,
+.p-top-column-card__title {
+  margin: 0 0 10px;
+  color: #111;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.p-top-column__excerpt,
+.p-top-column-card__excerpt {
+  margin: 0;
+  color: #111;
+  font-size: 0.88rem;
+  line-height: 1.8;
+}
+
+/* 記事リスト */
+.p-top-column__list {
+  grid-area: list;
+  display: flex;
+  gap: 28px;
+  margin-top: 20px;
+}
+
+.p-top-column-card {
+  flex: 0 0 250px;
+}
+
+.p-top-column-card__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.55 / 1;
+  object-fit: cover;
+  border-radius: 18px;
+  margin-bottom: 14px;
+}
+
+/* ボタン */
+.p-top-column__button-wrap {
+  grid-area: button;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.p-top-column__button-wrap .c-button {
+  min-width: 190px;
+}
+
+/* SP */
+@media (max-width: 768px) {
+  .p-top-column__inner {
+    width: min(100% - 32px, 1200px);
+    display: block;
+  }
+
+  .p-top-column__head {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .p-top-column__title {
+    white-space: normal;
+    font-size: 2rem;
+  }
+
+  .p-top-column__pickup {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto 32px;
+  }
+
+  .p-top-column__pickup-label {
+    left: 16px;
+    top: -20px;
+  }
+
+  .p-top-column__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 0;
+  }
+
+  .p-top-column-card {
+    flex: none;
+  }
+
+  .p-top-column__button-wrap {
+    margin-top: 32px;
+  }
+
+  .p-top-column-card:nth-child(odd),
+  .p-top-column-card:nth-child(even) {
+    transform: none;
+  }
+}
+
+/* PC のみカードをずらしてリズムを付ける（SP は 1 カラムでずれが冗長） */
+@media (min-width: 769px) {
+  .p-top-column-card:nth-child(odd) {
+    transform: translateY(40px);
+  }
+
+  .p-top-column-card:nth-child(even) {
+    transform: translateY(-8px);
+  }
+}
+
+.p-top-sns {
+  position: relative;
+  padding: 72px 0 96px;
+  background: transparent;
+}
+
+.p-top-sns__inner {
+  position: relative;
+  width: min(980px, calc(100% - 48px));
+  margin-inline: auto;
+  padding: 40px 76px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #3CB9D7;
+}
+
+.p-top-sns__inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/assets/img/zarazara-l.webp") repeat;
+  background-size: 300px;
+  mix-blend-mode: screen;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.p-top-sns__title,
+.p-top-sns__content {
+  position: relative;
+  z-index: 1;
+}
+
+.p-top-sns__title {
+  margin: 0 0 28px;
+  color: #1f2f75;
+  font-family: "Kiwi Maru", serif;
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+
+.p-top-sns__content {
+  position: relative;
+}
+
+.p-top-sns__group + .p-top-sns__group {
+  margin-top: 44px;
+}
+
+.p-top-sns__group-title {
+  margin: 18px 0 6px;
+  color: #262626;
+  font-family: "Kiwi Maru", serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.p-top-sns__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 30px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.p-top-sns__link {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  color: #111;
+  text-decoration: none;
+}
+
+.p-top-sns__icon {
+  display: grid;
+  place-items: center;
+  width: 80px;
+  height: 80px;
+  border: 1.5px solid #262626;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.p-top-sns__icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.p-top-sns__icon._scall img {
+  transform: scale(1.3);
+}
+
+.p-top-sns__name {
+  font-family: "Kiwi Maru", serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.p-top-sns__link--ameblo .p-top-sns__icon {
+  background: #A8D5BA;
+}
+
+.p-top-sns__link--instagram .p-top-sns__icon {
+  background: #F4C7C3;
+}
+
+.p-top-sns__link--x .p-top-sns__icon,
+.p-top-sns__link--tiktok .p-top-sns__icon {
+  background: #A8A8A8;
+}
+
+.p-top-sns__link--youtube .p-top-sns__icon {
+  background: #F8857B;
+}
+
+.p-top-sns__message {
+  position: absolute;
+  right: 4%;
+  bottom: 8px;
+  display: flex;
+  align-items: flex-end;
+  gap: 0;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.p-top-sns__bubble {
+  position: relative;
+  min-width: 400px;
+  margin: 0 -12px 40px 0;
+  padding: 40px;
+  border-radius: 24px;
+  background: url("/assets/img/hukidashi01.png") no-repeat center 85% / contain;
+  color: #111;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  z-index: 10;
+
+  @media (max-width: 768px) {
+    width: min(320px, 92%);
+    min-width: 0;
+    margin: 0 auto 32px;
+    padding: 18px 22px 20px;
+    border-radius: 22px;
+    background: #ffd900;
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.8;
+  }
+
+  @media (max-width: 768px) {
+    &::after {
+      content: "";
+      position: absolute;
+      right: 24px;
+      bottom: -14px;
+      width: 28px;
+      height: 18px;
+      background: #ffd900;
+      clip-path: polygon(0 0, 100% 0, 100% 100%);
+    }
+  }
+}
+
+.p-top-sns__person {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #111;
+
+  @media (max-width: 768px) {
+    margin-left: auto;
+    margin-top: 10px;
+  }
+}
+
+.p-top-sns__person img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 40% center;
+
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .p-top-sns {
+    padding: 56px 0 40px;
+  }
+
+  .p-top-sns__inner {
+    width: min(100% - 32px, 980px);
+    padding: 32px 20px 36px;
+  }
+
+  .p-top-sns .p-top-title__heading {
+    text-align: center;
+  }
+
+  /* 見出しは実際は .p-top-title__ja-l（旧 .p-top-sns__title は未使用） */
+  .p-top-sns .p-top-title__ja-l {
+    font-size: clamp(2.25rem, 10vw, 3rem);
+    text-align: center;
+    line-height: 1.12;
+  }
+
+  .p-top-sns__group-title {
+    font-size: 1.15rem;
+    text-align: center;
+  }
+
+  .p-top-sns__group {
+    text-align: center;
+  }
+
+  .p-top-sns__list {
+    gap: 16px 12px;
+    justify-content: center;
+  }
+
+  .p-top-sns__link {
+    min-width: 0;
+  }
+
+  .p-top-sns__icon {
+    width: 72px;
+    height: 72px;
+  }
+
+  .p-top-sns__icon img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .p-top-sns__message {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: 28px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .p-top-sns__bubble {
+    min-width: 0;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 18px 20px;
+    font-size: 0.88rem;
+    line-height: 1.75;
+    background-position: center 90%;
+    background-size: 100% auto;
+  }
+}
+
+.p-top-internship {
+  width: 100%;
+  padding: 0;
+}
+
+.p-top-internship__container {
+  position: relative;
+  width: min(1360px, calc(100% - 48px));
+  height: 560px;
+  margin-inline: auto;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.p-top-internship__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-top-internship__container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.26));
+}
+
+.p-top-internship__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 100%;
+  padding: 48px;
+  gap: 28px;
+}
+
+.p-top-internship__card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: min(100%, 680px);
+  padding: 14px 18px 14px 14px;
+  border-radius: 12px;
+  background: #3CB9D7;
+  text-decoration: none;
+  box-shadow: 0 10px 22px rgba(16, 63, 125, 0.2);
+}
+
+.p-top-internship__thumb-wrap {
+  flex: 0 0 168px;
+  width: 168px;
+  height: 96px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.p-top-internship__thumb {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-top-internship__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.p-top-internship__title {
+  margin: 0;
+  font-size: clamp(1.15rem, 2vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+}
+
+.p-top-internship__title .en {
+  color: #ffe66d;
+
+  text-shadow:
+    1px 1px 0 #0f2a6f,
+    -1px 1px 0 #0f2a6f,
+    1px -1px 0 #0f2a6f,
+    -1px -1px 0 #0f2a6f;
+}
+
+/* 日本語 */
+.p-top-internship__title span:not(.en) {
+  margin-left: 10px;
+  color: #0f2a6f;
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  font-weight: 500;
+}
+
+.p-top-internship__text {
+  margin: 10px 0 0;
+  color: #102242;
+  font-size: clamp(1rem, 1.45vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.5;
+  font-family: "Kiwi Maru", serif;
+}
+
+.p-top-internship__arrow {
+  position: relative;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid #0f2a6f;
+  border-radius: 50%;
+  background: #f3d900;
+}
+
+.p-top-internship__arrow::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 46%;
+  width: 14px;
+  height: 14px;
+  border-top: 1.5px solid #0f2a6f;
+  border-right: 1.5px solid #0f2a6f;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.p-top-internship__catch {
+  margin: 0;
+  color: #1f2f75;
+  font-size: clamp(1.5rem, 4.2vw, 2rem);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+  text-align: left;
+  text-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 900px) {
+  .p-top-internship__content {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 768px) {
+  .p-top-internship {
+    padding: 0 0 56px;
+  }
+
+  .p-top-internship__container {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+    max-height: none;
+  }
+
+  .p-top-internship__content {
+    min-height: 0;
+    height: 100%;
+    padding: 20px 16px 24px;
+    gap: 16px;
+    justify-content: space-between;
+  }
+
+  .p-top-internship__card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+    max-width: none;
+    padding: 14px 16px;
+  }
+
+  .p-top-internship__thumb-wrap {
+    display: none;
+  }
+
+  .p-top-internship__thumb {
+    height: 100%;
+  }
+
+  .p-top-internship__body {
+    text-align: center;
+  }
+
+  .p-top-internship__title {
+    font-size: 1.05rem;
+
+    span {
+      display: block;
+      margin: 4px 0 0;
+      font-size: 0.75rem;
+    }
+  }
+
+  .p-top-internship__text {
+    margin-top: 8px;
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
+  .p-top-internship__arrow {
+    align-self: center;
+    flex-basis: 40px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .p-top-internship__catch {
+    font-size: clamp(1.35rem, 6.5vw, 2rem);
+    line-height: 1.35;
+    text-align: center;
+  }
+}

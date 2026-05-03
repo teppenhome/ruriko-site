@@ -1,0 +1,41 @@
+.c-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 42px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  font-family: "Kiwi Maru", serif;
+  width: auto;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+.c-button--blue {
+  background: #0154A6;
+  color: #fff;
+}
+
+.c-button--yellow {
+  background: #F3D900;
+  color: #2B3A7A;
+}
+
+.c-button-icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+
+  background: url("/assets/img/button-right-white.png") no-repeat center;
+  background-size: contain;
+}
+
+.c-button--yellow .c-button-icon {
+  background-image: url("/assets/img/button-right-blue.png");
+  }
