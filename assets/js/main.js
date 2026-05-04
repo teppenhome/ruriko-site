@@ -2,6 +2,42 @@
 import "../../src/styles/main.scss";
 
 /* =========================
+  トップビジュアル読み込み完了までローディング
+========================= */
+const body = document.body;
+const mvLoaderImages = document.querySelectorAll(".js-mv-image");
+
+const finishLoading = () => {
+  body.classList.remove("is-loading");
+};
+
+if (mvLoaderImages.length === 0) {
+  finishLoading();
+} else {
+  let loadedCount = 0;
+
+  mvLoaderImages.forEach((img) => {
+    if (img.complete) {
+      loadedCount++;
+    } else {
+      img.addEventListener("load", () => {
+        loadedCount++;
+        if (loadedCount === mvLoaderImages.length) finishLoading();
+      });
+
+      img.addEventListener("error", () => {
+        loadedCount++;
+        if (loadedCount === mvLoaderImages.length) finishLoading();
+      });
+    }
+  });
+
+  if (loadedCount === mvLoaderImages.length) {
+    finishLoading();
+  }
+}
+
+/* =========================
   MV画像フェード切り替え
 ========================= */
 const mvImages = document.querySelectorAll(".p-top-mv__picture .p-top-mv__image");

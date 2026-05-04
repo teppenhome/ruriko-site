@@ -1,0 +1,17 @@
+.c-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background: #f7f8fa;
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
+}
+
+body:not(.is-loading) .c-loader {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}

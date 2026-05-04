@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 
-<body class="p-top">
+<body class="p-top is-loading">
   <header class="p-header">
     <div class="p-header__inner l-container">
       <a class="p-header__logo" href="index.html">
@@ -59,6 +59,12 @@
     <div class="p-header__overlay" aria-hidden="true"></div>
   </header>
 
+  <div class="c-loader">
+    <div class="c-loader__inner">
+      <span>Loading...</span>
+    </div>
+  </div>
+
   <main class="l-main" id="main">
 
     <section class="p-top-mv" aria-label="メインビジュアル">
@@ -69,7 +75,7 @@
               <picture>
                 <source media="(max-width: 768px)" srcset="/assets/img/sp/top01-sp.png" type="image/png" />
                 <img
-                  class="p-top-mv__image"
+                  class="p-top-mv__image js-mv-image"
                   src="/assets/img/top01.png"
                   alt="薬局で薬剤師が相談対応をしている様子"
                   width="1200"
@@ -80,7 +86,7 @@
               <picture>
                 <source media="(max-width: 768px)" srcset="/assets/img/sp/top02-sp.png" type="image/png" />
                 <img
-                  class="p-top-mv__image"
+                  class="p-top-mv__image js-mv-image"
                   src="/assets/img/top02.png"
                   alt="薬局で患者さまに寄り添って説明する様子"
                   width="1200"
@@ -91,7 +97,7 @@
               <picture>
                 <source media="(max-width: 768px)" srcset="/assets/img/sp/top03-sp.png" type="image/png" />
                 <img
-                  class="p-top-mv__image"
+                  class="p-top-mv__image js-mv-image"
                   src="/assets/img/top03.png"
                   alt="薬局スタッフが穏やかに対応している様子"
                   width="1200"

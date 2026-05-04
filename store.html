@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
   </head>
-  <body class="p-store">
+  <body class="p-store is-loading">
     <header class="p-header">
       <div class="p-header__inner l-container">
         <a class="p-header__logo" href="index.html">
@@ -60,6 +60,12 @@
       <div class="p-header__overlay" aria-hidden="true"></div>
     </header>
 
+    <div class="c-loader">
+      <div class="c-loader__inner">
+        <span>Loading...</span>
+      </div>
+    </div>
+
     <main class="l-main" id="main">
       <div class="p-store-bg">
         <span class="p-store-bg-circle c1"></span>
@@ -80,7 +86,7 @@
           <div class="p-mv-pill">
             <div class="p-mv-pill__half-wrap p-mv-pill__half-wrap--left">
               <div class="p-mv-pill__half p-mv-pill__half--left">
-                <img src="/assets/img/store/page-top_yellow.png" alt="黄色の背景" />
+                <img class="js-mv-image" src="/assets/img/store/page-top_yellow.png" alt="黄色の背景" />
               </div>
           
               <!-- 文字は動かさない -->
@@ -91,18 +97,18 @@
           
             <div class="p-mv-pill__half-wrap p-mv-pill__half-wrap--right">
               <div class="p-mv-pill__half p-mv-pill__half--right">
-                <img src="/assets/img/company/company-top.png" alt="瑠璃光薬局の店舗の様子" />
+                <img class="js-mv-image" src="/assets/img/company/company-top.png" alt="瑠璃光薬局の店舗の様子" />
               </div>
             </div>
           
             <div class="p-mv-pill__center">
-              <img src="/assets/img/medicine06.png" alt="薬のイメージ" />
+              <img class="js-mv-image" src="/assets/img/medicine06.png" alt="薬のイメージ" />
             </div>
             <div class="p-mv-pill__center _02">
-              <img src="/assets/img/medicine06.png" alt="薬のイメージ" />
+              <img class="js-mv-image" src="/assets/img/medicine06.png" alt="薬のイメージ" />
             </div>
             <div class="p-mv-pill__center _03">
-              <img src="/assets/img/medicine06.png" alt="薬のイメージ" />
+              <img class="js-mv-image" src="/assets/img/medicine06.png" alt="薬のイメージ" />
             </div>
           </div>
         </div>
