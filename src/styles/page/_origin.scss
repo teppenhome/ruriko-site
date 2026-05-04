@@ -1,3 +1,607 @@
-// .p-origin
+// 名前の由来ページ
+
 .p-origin {
+  overflow-x: hidden;
+  background-color: #f7f8fa;
+
+  .l-main {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+/* =================
+MV（mission と同系統）
+================= */
+.p-origin-mv {
+  position: relative;
+  padding: 120px 0 160px;
+  background: #f7f8fa;
+
+  @media (max-width: 768px) {
+    padding: 30px 0 100px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -5%;
+    background: url("/assets/img/mission/mission-mv-bg.webp") no-repeat center center / cover;
+    z-index: 0;
+    transform: rotate(-5deg);
+    transform-origin: center;
+
+    @media (max-width: 768px) {
+      transform: rotate(-10deg) translateY(-140px);
+      inset: -10%;
+    }
+  }
+
+  .l-container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .p-sub-mv__title {
+    margin-bottom: 60px;
+  }
+
+  .p-origin-mv__title {
+    text-align: left;
+
+    .p-origin-mv__subtitle {
+      display: block;
+      margin-top: clamp(8px, 1.2vw, 12px);
+      font-family: "Kiwi Maru", serif;
+      font-size: clamp(0.8rem, 1.5vw, 1rem);
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      line-height: 1.4;
+      color: #1a2f74;
+      padding-left: 320px;
+
+      @media (max-width: 768px) {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+.p-origin-mv__card {
+  max-width: 600px;
+  margin: 0 auto;
+  min-height: 200px;
+  padding: 32px;
+  border-radius: 20px;
+  background: url("/assets/img/mission/background-sub.webp") no-repeat center 90% / cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    padding: 20px 16px;
+    min-height: 0;
+  }
+
+  p {
+    margin: 0 0 12px;
+    font-family: "Kiwi Maru", serif;
+    font-weight: 500;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    line-height: 1.7;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+/* =================
+由来イントロ
+================= */
+.p-origin-intro {
+  padding: 0;
+  margin-top: -40px;
+  margin-bottom: 120px;
+
+  @media (max-width: 768px) {
+    margin-top: 0;
+    margin-bottom: 72px;
+  }
+}
+
+.p-origin-intro__inner {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.p-origin-intro__photo {
+  flex: 1 1 52%;
+  max-width: 560px;
+  border-radius: 20px;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    flex: none;
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.p-origin-intro__photo-img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  display: block;
+}
+
+.p-origin-intro__logo-card {
+  flex: 0 1 40%;
+  max-width: 380px;
+  margin-top: 48px;
+  padding: 28px 32px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 12px 32px rgba(16, 63, 125, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    flex: none;
+    width: 100%;
+    max-width: none;
+    margin-top: 0;
+    padding: 24px;
+  }
+}
+
+.p-origin-intro__logo-img {
+  width: 100%;
+  height: auto;
+  max-height: 120px;
+  object-fit: contain;
+}
+
+/* =================
+薬師如来と瑠璃光（PHILOSOPHY パネル系）
+================= */
+.p-origin-yakushi {
+  position: relative;
+  padding: 0 0 100px;
+  background: #f7f8fa;
+
+  @media (max-width: 768px) {
+    padding: 0 0 56px;
+  }
+}
+
+.p-origin-yakushi__panel {
+  width: min(920px, 100%);
+  margin-inline: auto;
+  padding: clamp(48px, 6vw, 72px) clamp(32px, 5vw, 56px);
+  border-radius: 28px;
+  background: #3cb9d7;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("/assets/img/zarazara-l.webp") repeat;
+    background-size: 320px auto;
+    mix-blend-mode: screen;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+.p-origin-yakushi__title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  text-align: center;
+  font-family: "Kiwi Maru", serif;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: #1a2f74;
+}
+
+.p-origin-yakushi__body {
+  position: relative;
+  z-index: 1;
+  margin-top: 36px;
+  padding: clamp(28px, 4vw, 48px);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.86);
+  color: #111;
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
+  font-weight: 400;
+  line-height: 2;
+
+  p {
+    margin: 0;
+
+    & + p {
+      margin-top: 1.8em;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 24px 18px;
+    line-height: 1.9;
+  }
+}
+
+/* =================
+瑠璃という宝石のイメージ
+================= */
+.p-origin-stone {
+  position: relative;
+  padding: 72px 0 96px;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 48px 0 72px;
+  }
+}
+
+.p-origin-stone__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.p-origin-stone__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.p-origin-stone__container {
+  position: relative;
+  z-index: 1;
+}
+
+.p-origin-stone__wrap {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0;
+  min-height: 280px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 0;
+  }
+}
+
+.p-origin-stone__card {
+  flex: 1 1 min(520px, 100%);
+  max-width: 560px;
+  padding: clamp(28px, 4vw, 40px);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+
+  @media (max-width: 768px) {
+    max-width: none;
+  }
+}
+
+.p-origin-stone__heading {
+  margin: 0 0 16px;
+  font-family: "Kiwi Maru", serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 500;
+  color: #1a2f74;
+  letter-spacing: 0.05em;
+}
+
+.p-origin-stone__text {
+  margin: 0;
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
+  line-height: 2;
+  color: #222;
+}
+
+.p-origin-stone__figure {
+  position: relative;
+  flex: 0 0 auto;
+  width: min(280px, 42vw);
+  margin: 0 0 0 -40px;
+  z-index: 2;
+  pointer-events: none;
+
+  @media (max-width: 768px) {
+    width: min(220px, 70%);
+    margin: -32px 0 0 auto;
+    align-self: flex-end;
+  }
+}
+
+.p-origin-stone__stone-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* =================
+OUR VALUES
+================= */
+.p-origin-values {
+  position: relative;
+  padding: 80px 0 100px;
+  background: #f7f8fa;
+
+  @media (max-width: 768px) {
+    padding: 56px 0 72px;
+  }
+}
+
+.p-origin-values__wave {
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  width: 130vw;
+  height: 720px;
+  transform: translateX(-50%);
+  background: url("/assets/img/mission/mission-mv-bg.webp") no-repeat center / cover;
+  opacity: 0.35;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.p-origin-values .l-container {
+  position: relative;
+  z-index: 1;
+}
+
+.p-origin-values__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 24px;
+  margin-top: 48px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    margin-top: 32px;
+  }
+}
+
+.p-origin-values__note-card {
+  grid-column: 1;
+  grid-row: 1;
+  padding: 24px 28px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #2b6cb0 0%, #3cb9d7 100%);
+  box-shadow: 0 10px 24px rgba(16, 63, 125, 0.18);
+
+  @media (max-width: 768px) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+.p-origin-values__note-text {
+  margin: 0;
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  line-height: 1.8;
+  color: #fff;
+  font-weight: 500;
+}
+
+.p-origin-values__logo-card {
+  grid-column: 2;
+  grid-row: 1;
+  padding: 28px 32px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(16, 63, 125, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  @media (max-width: 768px) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+.p-origin-values__photo {
+  grid-column: 1;
+  grid-row: 2;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  max-width: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+.p-origin-values__strap-line {
+  margin: 40px auto 32px;
+  max-width: 720px;
+  padding: 18px 28px;
+  border-radius: 999px;
+  text-align: center;
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  font-weight: 600;
+  color: #1a2f74;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 20px rgba(26, 47, 116, 0.08);
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: url("/assets/img/zarazara-l.webp") repeat;
+    background-size: 280px auto;
+    mix-blend-mode: screen;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    margin: 28px 0 24px;
+    padding: 16px 18px;
+    border-radius: 16px;
+  }
+}
+
+.p-origin-values__bands {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.p-origin-values__band {
+  margin: 0;
+  padding: 22px 28px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #1e4d8c 0%, #3cb9d7 100%);
+  box-shadow: 0 6px 18px rgba(16, 63, 125, 0.2);
+
+  @media (max-width: 768px) {
+    padding: 18px 20px;
+  }
+}
+
+.p-origin-values__band-text {
+  display: block;
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  font-weight: 600;
+  line-height: 1.65;
+  color: #fff;
+  font-family: "Kiwi Maru", serif;
+}
+
+/* =================
+OUR COMMITMENT
+================= */
+.p-origin-commitment {
+  padding: 0 0 100px;
+  background: #f7f8fa;
+
+  @media (max-width: 768px) {
+    padding: 0 0 64px;
+  }
+}
+
+.p-origin-commitment__panel {
+  width: min(920px, 100%);
+  margin-inline: auto;
+  padding: clamp(48px, 6vw, 72px) clamp(32px, 5vw, 56px) clamp(32px, 4vw, 48px);
+  border-radius: 28px;
+  background: #3cb9d7;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("/assets/img/zarazara-l.webp") repeat;
+    background-size: 320px auto;
+    mix-blend-mode: screen;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .p-top-title__heading {
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 768px) {
+    padding: 40px 20px 28px;
+    border-radius: 22px;
+  }
+}
+
+.p-origin-commitment__body {
+  position: relative;
+  z-index: 1;
+  margin-top: 36px;
+  padding: clamp(28px, 4vw, 48px);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #111;
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
+  line-height: 2;
+
+  p {
+    margin: 0;
+
+    & + p {
+      margin-top: 1.5em;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 24px 18px;
+  }
+}
+
+.p-origin-commitment__illust {
+  position: relative;
+  z-index: 1;
+  margin-top: 32px;
+  text-align: center;
+}
+
+.p-origin-commitment__illust-img {
+  width: min(100%, 520px);
+  height: auto;
+  margin-inline: auto;
+  display: block;
+  object-fit: contain;
 }
