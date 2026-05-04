@@ -377,6 +377,8 @@ $store-text: #333;
 .p-store-banner {
   grid-column: 1 / -1;
   list-style: none;
+  position: relative;
+  overflow: hidden;
 }
 
 .p-store-banner__link {
@@ -466,7 +468,7 @@ $store-text: #333;
   z-index: 10;
 
   @media (max-width: 768px) {
-    z-index: 0;
+    z-index: 2;
   }
 }
 
@@ -509,7 +511,7 @@ $store-text: #333;
 
   @media (max-width: 768px) {
     top: auto;
-    bottom: -5%;
+    bottom: -10%;
     left: auto;
     right: 0;
   }

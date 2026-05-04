@@ -4,11 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ミッション | 瑠璃光薬局</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500;700&family=Noto+Sans+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body class="p-mission is-loading">
     <header class="p-header">
       <div class="p-header__inner l-container">
-        <a class="p-header__logo" href="index.html">瑠璃光薬局</a>
+        <a class="p-header__logo" href="index.html">
+          <img src="/assets/img/logo-wide.png" alt="瑠璃光薬局" />
+        </a>
         <nav class="p-header__nav" id="global-nav" aria-label="グローバルナビゲーション">
           <ul class="p-header__list">
             <li class="p-header__item">
@@ -59,25 +67,144 @@
     </div>
 
     <main class="l-main" id="main">
-      <div class="l-container">
-        <header class="p-mission__head">
-          <h1 class="c-title">ミッション</h1>
-        </header>
-        <section class="p-mission__section" aria-label="ミッション">
-        </section>
-      </div>
+      <!-- 1. ミッションMV -->
+      <section class="p-mission__mv" aria-labelledby="mission-mv-heading">
+        <div class="p-mission__mv-bg p-mission__mv-bg--wave" aria-hidden="true"></div>
+        <div class="l-container p-mission__mv-inner">
+          <h1 id="mission-mv-heading" class="p-mission__mv-title">瑠璃光薬局のMISSION</h1>
+          <div class="p-mission__mv-card js-fade-up">
+            <p class="p-mission__mv-lead">
+              全社員の物心両面の幸福を追求すると同時に、
+            </p>
+            <p class="p-mission__mv-line">一、お薬を通して皆様のお役に立ちます</p>
+            <p class="p-mission__mv-line">一、企業価値を高め、医療・福祉分野で社会貢献します</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. イントロ画像 -->
+      <section class="p-mission__intro" aria-label="ミッション紹介の写真">
+        <div class="l-container">
+          <div class="p-mission__intro-grid js-fade-up">
+            <div class="p-mission__intro-photo p-mission__intro-photo--primary">
+              <img
+                class="p-mission__intro-img"
+                src="/assets/img/mission/mission-photo01.jpg"
+                alt="薬局内の様子（仮）"
+                width="800"
+                height="600"
+              />
+            </div>
+            <div class="p-mission__intro-photo p-mission__intro-photo--secondary">
+              <img
+                class="p-mission__intro-img"
+                src="/assets/img/mission/mission-photo02.jpg"
+                alt="薬局内の様子（仮）"
+                width="800"
+                height="600"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. PHILOSOPHY -->
+      <section class="p-mission__philosophy" aria-labelledby="mission-philosophy-en">
+        <div class="p-mission__philosophy-panel p-mission__philosophy-panel--texture">
+          <div class="l-container p-mission__philosophy-inner">
+            <header class="p-mission__philosophy-head">
+              <h2 id="mission-philosophy-en" class="p-mission__philosophy-en">PHILOSOPHY</h2>
+              <p class="p-mission__philosophy-ja">瑠璃光フィロソフィ</p>
+            </header>
+            <div class="p-mission__philosophy-card js-fade-up">
+              <div class="p-mission__philosophy-body">
+                <p>
+                  私たち瑠璃光薬局は、地域に根ざした保険調剤薬局として、患者さま一人ひとりの生活や治療に寄り添うことを大切にしています。正確な調剤と丁寧な服薬指導はもちろん、不安や疑問を安心へとつなぐコミュニケーションを心がけ、チーム全体で質の高い医療・福祉への貢献を目指します。
+                </p>
+                <p>
+                  この文章はデザイン確認用の仮のコピーです。後から正式なフィロソフィ文へ差し替えてください。段落が複数ある場合の余白や行間が自然に見えるよう、ある程度の長さを想定したレイアウトになっています。
+                </p>
+                <p>
+                  薬局としての専門性を高めつつ、働く仲間が安心して成長できる環境づくりにも取り組み、持続可能で信頼される組織であることを約束します。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. 下部ビジュアル -->
+      <section class="p-mission__visual" aria-label="メッセージビジュアル">
+        <div class="l-container">
+          <div class="p-mission__visual-inner js-fade-up">
+            <div class="p-mission__visual-photo">
+              <img
+                class="p-mission__visual-img"
+                src="/assets/img/mission/mission-visual.jpg"
+                alt="カウンターで業務を行うスタッフの様子（仮）"
+                width="1200"
+                height="514"
+              />
+            </div>
+            <p class="p-mission__visual-copy">
+              <span class="p-mission__visual-copy-line">お薬を通して</span>
+              <span class="p-mission__visual-copy-line">いかに</span>
+              <span class="p-mission__visual-copy-line">皆様のお役にたてるか</span>
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer class="l-footer">
-      <div class="l-container">
-        <p class="l-footer__copy">© 瑠璃光薬局</p>
-        <nav class="l-footer__nav" aria-label="フッターナビゲーション">
-          <ul class="l-footer__list">
-            <li class="l-footer__item">
-              <a class="l-footer__link" href="privacy.html">プライバシーポリシー</a>
-            </li>
-          </ul>
-        </nav>
+    <footer class="l-footer p-footer">
+      <div class="l-footer__inner">
+        <div class="l-footer__top">
+          <nav class="l-footer__nav" aria-label="フッターナビゲーション">
+            <div class="l-footer__nav-column">
+              <ul class="l-footer__list">
+                <li class="l-footer__item"><a class="l-footer__link" href="index.html">ホーム</a></li>
+                <li class="l-footer__item"><a class="l-footer__link" href="store.html">店舗一覧</a></li>
+                <li class="l-footer__item"><a class="l-footer__link" href="work.html">働き方</a></li>
+                <li class="l-footer__item"><a class="l-footer__link" href="column.html">コラム</a></li>
+                <li class="l-footer__item"><a class="l-footer__link" href="company.html">会社概要</a></li>
+              </ul>
+            </div>
+            <div class="l-footer__nav-column">
+              <ul class="l-footer__list">
+                <li class="l-footer__item">
+                  <a class="l-footer__link" href="#">各種指針・体制整備について</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+        <div class="l-footer__bottom">
+          <div class="l-footer__company">
+            <a class="l-footer__logo" href="index.html" aria-label="瑠璃光薬局トップページへ">
+              <img src="/assets/img/logo-wide.png" alt="瑠璃光薬局ロゴ" />
+            </a>
+            <div class="l-footer__company-body">
+              <p class="l-footer__name">株式会社 瑠璃光(るりこう)</p>
+              <p class="l-footer__address">【本社】〒920-0942 石川県金沢市小立野1丁目2番7号</p>
+              <p class="l-footer__tel">TEL: 076-256-5278</p>
+              <p class="l-footer__fax">FAX: 076-225-8678</p>
+            </div>
+          </div>
+
+          <div class="l-footer__cta">
+            <a class="c-button c-button--blue" href="work.html">
+              採用特設ページ
+              <span class="c-button-icon" aria-hidden="true"></span>
+            </a>
+            <a class="c-button c-button--yellow" href="#">
+              応募エントリー
+              <span class="c-button-icon" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+
+        <p class="p-footer__copy">© 2026 瑠璃光薬局 All Rights Reserved.</p>
       </div>
     </footer>
     <script type="module" src="/assets/js/main.js"></script>

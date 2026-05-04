@@ -1,3 +1,292 @@
-// .p-mission
+// ミッションページ
+// -----------------------------------------------------------------------------
+
+$mission-navy: #1a2f74;
+$mission-blue: #0154a6;
+$mission-cyan: #3cb9d7;
+$mission-sky: #b8dff5;
+$mission-bg: #f7f8fa;
+$mission-text: #333;
+
 .p-mission {
+  overflow-x: hidden;
+  background-color: $mission-bg;
+
+  .l-main {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+/* ----- MV ----- */
+.p-mission__mv {
+  position: relative;
+  padding-block: clamp(2.5rem, 6vw, 5rem) clamp(2.75rem, 7vw, 5.5rem);
+  overflow: hidden;
+}
+
+.p-mission__mv-inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* 流線装飾（後から画像差し替え可） */
+.p-mission__mv-bg--wave {
+  position: absolute;
+  z-index: 0;
+  inset: -25% -12% auto;
+  height: min(85%, 520px);
+  pointer-events: none;
+  opacity: 0.95;
+  /* 仮: グラデーション。本番は下記のコメントを有効化して調整 */
+  background:
+    radial-gradient(ellipse 75% 55% at 15% 25%, rgba($mission-sky, 0.65), transparent 58%),
+    radial-gradient(ellipse 55% 45% at 78% 15%, rgba($mission-cyan, 0.4), transparent 52%),
+    linear-gradient(115deg, rgba(232, 248, 255, 0.9) 0%, rgba(255, 255, 255, 0) 55%);
+  // background-image: url("/assets/img/common/bg-wave-blue.png");
+  // background-size: cover;
+  // background-position: center top;
+  // background-repeat: no-repeat;
+}
+
+.p-mission__mv-title {
+  margin: 0 0 clamp(1.25rem, 4vw, 2rem);
+  font-family: "Kiwi Maru", serif;
+  font-size: clamp(1.35rem, 3.8vw, 2.25rem);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 1.35;
+  color: $mission-navy;
+}
+
+.p-mission__mv-card {
+  margin-inline: auto;
+  max-width: 920px;
+  padding: clamp(1.5rem, 4vw, 2.75rem) clamp(1.25rem, 4vw, 3rem);
+  border-radius: clamp(18px, 3vw, 32px);
+  background: linear-gradient(135deg, #e8f6ff 0%, #d4f3f8 45%, #c8eef9 100%);
+  box-shadow: 0 16px 40px rgba(26, 47, 116, 0.08);
+  color: $mission-text;
+  text-align: center;
+  font-size: clamp(0.95rem, 2.2vw, 1.125rem);
+  line-height: 1.85;
+}
+
+.p-mission__mv-lead {
+  margin: 0 0 1em;
+}
+
+.p-mission__mv-line {
+  margin: 0 0 0.65em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* ----- イントロ画像 ----- */
+.p-mission__intro {
+  padding-block: clamp(2.5rem, 7vw, 6rem);
+}
+
+.p-mission__intro-grid {
+  position: relative;
+  max-width: 900px;
+  margin-inline: auto;
+  min-height: clamp(260px, 42vw, 400px);
+}
+
+.p-mission__intro-photo {
+  border-radius: clamp(16px, 3vw, 28px);
+  overflow: hidden;
+  box-shadow: 0 14px 36px rgba(26, 47, 116, 0.12);
+}
+
+.p-mission__intro-photo--primary {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 520px);
+  aspect-ratio: 4 / 3;
+}
+
+.p-mission__intro-photo--secondary {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  width: min(88%, 380px);
+  aspect-ratio: 4 / 3;
+}
+
+.p-mission__intro-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .p-mission__intro-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 0;
+    gap: 0;
+    padding-bottom: 0;
+  }
+
+  .p-mission__intro-photo--primary {
+    width: 100%;
+    max-width: none;
+  }
+
+  .p-mission__intro-photo--secondary {
+    position: relative;
+    width: 88%;
+    max-width: 360px;
+    margin-top: -40px;
+    margin-left: auto;
+    align-self: flex-end;
+  }
+}
+
+/* ----- PHILOSOPHY ----- */
+.p-mission__philosophy {
+  padding-block: clamp(2.5rem, 7vw, 6rem);
+}
+
+.p-mission__philosophy-panel {
+  margin-inline: auto;
+  max-width: calc(var(--container) + var(--px) * 2);
+  padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
+  border-radius: clamp(20px, 4vw, 40px);
+  background-color: #d8eff8;
+}
+
+/* テクスチャ用（後から画像差し替え可） */
+.p-mission__philosophy-panel--texture {
+  background-color: #d0ebf6;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)),
+    repeating-linear-gradient(
+      -12deg,
+      rgba(255, 255, 255, 0.03) 0 1px,
+      transparent 1px 4px
+    );
+  // background-image: url("/assets/img/common/bg-texture-blue.png");
+  // background-size: cover;
+  // background-blend-mode: soft-light;
+}
+
+.p-mission__philosophy-inner {
+  max-width: 960px;
+}
+
+.p-mission__philosophy-head {
+  text-align: center;
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.p-mission__philosophy-en {
+  margin: 0;
+  font-family: "Kiwi Maru", serif;
+  font-size: clamp(1.75rem, 4.5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  color: $mission-navy;
+}
+
+.p-mission__philosophy-ja {
+  margin: 0.5rem 0 0;
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: $mission-navy;
+}
+
+.p-mission__philosophy-card {
+  margin-inline: auto;
+  max-width: 800px;
+  padding: clamp(1.5rem, 4vw, 2.75rem) clamp(1.25rem, 3.5vw, 2.5rem);
+  border-radius: clamp(14px, 2.5vw, 24px);
+  background: #fff;
+  box-shadow: 0 10px 32px rgba(26, 47, 116, 0.06);
+}
+
+.p-mission__philosophy-body {
+  color: $mission-text;
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  line-height: 1.9;
+
+  p {
+    margin: 0 0 1.25em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* ----- 下部ビジュアル ----- */
+.p-mission__visual {
+  padding-block: clamp(2.5rem, 7vw, 5rem) clamp(3rem, 9vw, 7rem);
+}
+
+.p-mission__visual-inner {
+  position: relative;
+  margin-inline: auto;
+  max-width: 1120px;
+  border-radius: clamp(16px, 3vw, 28px);
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(26, 47, 116, 0.1);
+}
+
+.p-mission__visual-photo {
+  aspect-ratio: 21 / 9;
+  min-height: 200px;
+  background: linear-gradient(90deg, #dfeaf5, #c5e6f0);
+
+  @media (max-width: 768px) {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+.p-mission__visual-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-mission__visual-copy {
+  position: absolute;
+  right: clamp(1rem, 4vw, 2.75rem);
+  bottom: clamp(1rem, 4vw, 2.25rem);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.15em;
+  font-weight: 700;
+  font-size: clamp(1.05rem, 3.2vw, 1.65rem);
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  color: $mission-blue;
+  text-shadow:
+    0 0 1px rgba(255, 255, 255, 0.9),
+    0 0 12px rgba(255, 255, 255, 0.75);
+  pointer-events: none;
+}
+
+.p-mission__visual-copy-line {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .p-mission__visual-copy {
+    right: 1rem;
+    bottom: 1rem;
+    font-size: clamp(1rem, 4.2vw, 1.25rem);
+  }
 }
