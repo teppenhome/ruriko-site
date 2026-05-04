@@ -26,16 +26,7 @@ $store-text: #333;
 }
 
 .p-store-bg-circle {
-  position: absolute;
   z-index: 0;
-  border-radius: 50%;
-  background: transparent;
-  box-shadow:
-    0 0 28px rgba(0, 98, 255, 0.4),
-    inset 0 0 0 1px rgba(0, 98, 255, 0.1);
-}
-
-.p-store-bg-circle {
   position: absolute;
   width: 700px;
   height: 700px;

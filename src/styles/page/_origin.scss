@@ -10,13 +10,95 @@
   }
 }
 
+.p-origin-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.p-origin-bg-circle {
+  z-index: 0;
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow:
+    0 0 28px rgba(0, 98, 255, 0.4),
+    inset 0 0 0 1px rgba(0, 98, 255, 0.1);
+
+  @media (max-width: 768px) {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.p-origin-bg-circle.c1 {
+  top: 350px;
+  left: 60px;
+}
+
+.p-origin-bg-circle.c2 {
+  top: 700px;
+  right: 90px;
+  width: 800px;
+  height: 800px;
+
+  @media (max-width: 768px) {
+    width: 300px;
+    height: 300px;
+    top: 600px;
+  }
+}
+
+.p-origin-bg-circle.c3 {
+  top: 1500px;
+  left: -100px;
+  width: 1000px;
+  height: 1000px;
+
+  @media (max-width: 768px) {
+    width: 300px;
+    height: 300px;
+    top: 1300px;
+    left: -0;
+  }
+}
+
+.p-origin-bg-circle.c4 {
+  top: 2000px;
+  right: -100px;
+  width: 1000px;
+  height: 1000px;
+
+  @media (max-width: 768px) {
+    width: 400px;
+    height: 400px;
+    right: 0;
+    top: 2500px;
+  }
+}
+
+.p-origin-bg-circle.c5 {
+  top: 3000px;
+  left: 0;
+  width: 900px;
+  height: 900px;
+
+  @media (max-width: 768px) {
+    width: 400px;
+    height: 400px;
+    left: -100px;
+    top: 3000px;
+  }
+}
+
 /* =================
 MV（mission と同系統）
 ================= */
 .p-origin-mv {
   position: relative;
   padding: 120px 0 160px;
-  background: #f7f8fa;
 
   @media (max-width: 768px) {
     padding: 30px 0 100px;
@@ -28,7 +110,7 @@ MV（mission と同系統）
     inset: -5%;
     background: url("/assets/img/mission/mission-mv-bg.webp") no-repeat center center / cover;
     z-index: 0;
-    transform: rotate(-5deg);
+    transform: translateY(-200px) rotate(-10deg);
     transform-origin: center;
 
     @media (max-width: 768px) {
@@ -42,34 +124,19 @@ MV（mission と同系統）
     z-index: 1;
   }
 
-  .p-sub-mv__title {
-    margin-bottom: 60px;
+  .p-origin-mv__highlight {
+    color: #1A2F74;
+    font-weight: 700;
   }
 
   .p-origin-mv__title {
     text-align: left;
-
-    .p-origin-mv__subtitle {
-      display: block;
-      margin-top: clamp(8px, 1.2vw, 12px);
-      font-family: "Kiwi Maru", serif;
-      font-size: clamp(0.8rem, 1.5vw, 1rem);
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      line-height: 1.4;
-      color: #1a2f74;
-      padding-left: 320px;
-
-      @media (max-width: 768px) {
-        padding-left: 0;
-      }
-    }
   }
 }
 
 .p-origin-mv__card {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 120px auto 0;
   min-height: 200px;
   padding: 32px;
   border-radius: 20px;
@@ -82,11 +149,11 @@ MV（mission と同系統）
   }
 
   p {
-    margin: 0 0 12px;
+    margin: 12px 0 12px;
     font-family: "Kiwi Maru", serif;
     font-weight: 500;
     font-size: clamp(1rem, 2vw, 1.15rem);
-    line-height: 1.7;
+    line-height: 1.9;
 
     &:last-child {
       margin-bottom: 0;
@@ -99,58 +166,47 @@ MV（mission と同系統）
 }
 
 /* =================
-由来イントロ
+由来イントロ（mission イントロ画像と同じ配置）
 ================= */
 .p-origin-intro {
   padding: 0;
   margin-top: -40px;
-  margin-bottom: 120px;
-
-  @media (max-width: 768px) {
-    margin-top: 0;
-    margin-bottom: 72px;
-  }
+  margin-bottom: 140px;
 }
 
-.p-origin-intro__inner {
+.p-origin-intro__images {
   position: relative;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
   align-items: flex-start;
-  justify-content: space-between;
-  gap: 24px;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 20px;
-  }
+  gap: 0;
 }
 
-.p-origin-intro__photo {
-  flex: 1 1 52%;
-  max-width: 560px;
-  border-radius: 20px;
-  overflow: hidden;
-
-  @media (max-width: 768px) {
-    flex: none;
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.p-origin-intro__photo-img {
-  width: 100%;
-  height: 100%;
+.p-origin-intro__img {
+  width: 500px;
   aspect-ratio: 3 / 2;
-  object-fit: cover;
-  display: block;
+  overflow: hidden;
+  border-radius: 20px;
+  z-index: 2;
+
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.p-origin-intro__img--small {
+  width: 460px;
+  transform: translateY(100px);
+  margin-left: -20px;
+  z-index: 1;
 }
 
 .p-origin-intro__logo-card {
-  flex: 0 1 40%;
-  max-width: 380px;
-  margin-top: 48px;
+  width: 100%;
+  height: 100%;
   padding: 28px 32px;
   border-radius: 20px;
   background: #fff;
@@ -158,20 +214,13 @@ MV（mission と同系統）
   display: flex;
   align-items: center;
   justify-content: center;
-
-  @media (max-width: 768px) {
-    flex: none;
-    width: 100%;
-    max-width: none;
-    margin-top: 0;
-    padding: 24px;
-  }
+  box-sizing: border-box;
 }
 
 .p-origin-intro__logo-img {
   width: 100%;
   height: auto;
-  max-height: 120px;
+  max-height: 100%;
   object-fit: contain;
 }
 
@@ -181,7 +230,6 @@ MV（mission と同系統）
 .p-origin-yakushi {
   position: relative;
   padding: 0 0 100px;
-  background: #f7f8fa;
 
   @media (max-width: 768px) {
     padding: 0 0 56px;
@@ -191,7 +239,7 @@ MV（mission と同系統）
 .p-origin-yakushi__panel {
   width: min(920px, 100%);
   margin-inline: auto;
-  padding: clamp(48px, 6vw, 72px) clamp(32px, 5vw, 56px);
+  padding: clamp(48px, 6vw, 72px) clamp(18px, 5vw, 56px);
   border-radius: 28px;
   background: #3cb9d7;
   overflow: hidden;
@@ -243,6 +291,11 @@ MV（mission と同系統）
     }
   }
 
+  .is-highlight {
+    color: #1A2F74;
+    font-weight: 700;
+  }
+
   @media (max-width: 768px) {
     padding: 24px 18px;
     line-height: 1.9;
@@ -254,272 +307,402 @@ MV（mission と同系統）
 ================= */
 .p-origin-stone {
   position: relative;
-  padding: 72px 0 96px;
-  overflow: hidden;
+  padding: 60px 0;
 
   @media (max-width: 768px) {
-    padding: 48px 0 72px;
+    padding: 0;
   }
-}
-
-.p-origin-stone__bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-.p-origin-stone__bg-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
-.p-origin-stone__container {
-  position: relative;
-  z-index: 1;
 }
 
 .p-origin-stone__wrap {
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  gap: 0;
-  min-height: 280px;
+  width: min(920px, 100%);
+  min-height: 520px;
+  margin-inline: auto;
+  border-radius: 22px;
+  overflow: visible;
+}
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: stretch;
-    min-height: 0;
-  }
+.p-origin-stone__bg-img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 22px;
+  object-fit: cover;
 }
 
 .p-origin-stone__card {
-  flex: 1 1 min(520px, 100%);
-  max-width: 560px;
-  padding: clamp(28px, 4vw, 40px);
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.88);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+  position: absolute;
+  z-index: 2;
+  top: 48px;
+  left: 56px;
+  width: min(520px, calc(100% - 112px));
+  padding: 15px 20px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(4px);
+  color: #111;
+  line-height: 1.7;
+  font-weight: 500;
 
-  @media (max-width: 768px) {
-    max-width: none;
+  p {
+    margin: 0;
+
+    & + p {
+      margin-top: 0.85em;
+    }
+  }
+
+  .is-highlight {
+    color: #2B3A7A;
+    font-weight: 700;
   }
 }
 
 .p-origin-stone__heading {
-  margin: 0 0 16px;
-  font-family: "Kiwi Maru", serif;
-  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-  font-weight: 500;
-  color: #1a2f74;
-  letter-spacing: 0.05em;
-}
-
-.p-origin-stone__text {
   margin: 0;
-  font-size: clamp(0.9rem, 1.3vw, 1rem);
-  line-height: 2;
-  color: #222;
+  color: #1f2f75;
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-align: center;
+  font-family: "Kiwi Maru", serif;
 }
 
 .p-origin-stone__figure {
-  position: relative;
-  flex: 0 0 auto;
-  width: min(280px, 42vw);
-  margin: 0 0 0 -40px;
-  z-index: 2;
-  pointer-events: none;
-
-  @media (max-width: 768px) {
-    width: min(220px, 70%);
-    margin: -32px 0 0 auto;
-    align-self: flex-end;
-  }
+  position: absolute;
+  z-index: 1;
+  right: 44px;
+  bottom: 48px;
+  width: min(360px, 42%);
+  margin: 0;
+  padding: 8px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 1);
 }
 
 .p-origin-stone__stone-img {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
-  object-fit: contain;
 }
 
-/* =================
-OUR VALUES
-================= */
+@media (max-width: 768px) {
+  .p-origin-stone__wrap {
+    min-height: auto;
+    padding: 28px 18px;
+    overflow: hidden;
+  }
+
+  .p-origin-stone__bg-img {
+    position: absolute;
+  }
+
+  .p-origin-stone__card {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    padding: 26px 20px;
+  }
+
+  .p-origin-stone__figure {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 82%;
+    margin: 24px auto 0;
+    padding: 20px;
+  }
+}
+
+//our values
 .p-origin-values {
   position: relative;
-  padding: 80px 0 100px;
-  background: #f7f8fa;
+  padding: 100px 0 140px;
+  overflow: hidden;
 
-  @media (max-width: 768px) {
-    padding: 56px 0 72px;
+  .l-container {
+    position: relative;
+    z-index: 2;
   }
 }
 
 .p-origin-values__wave {
   position: absolute;
+  top: 70px;
   left: 50%;
-  top: 35%;
-  width: 130vw;
-  height: 720px;
+  width: 100%;
+  height: 700px;
   transform: translateX(-50%);
-  background: url("/assets/img/mission/mission-mv-bg.webp") no-repeat center / cover;
-  opacity: 0.35;
+  background: url("/assets/img/origin/origin-values-bg.webp") no-repeat center center / cover;
   z-index: 0;
   pointer-events: none;
+  opacity: 0.8;
 }
 
-.p-origin-values .l-container {
-  position: relative;
-  z-index: 1;
+.p-origin-values__head {
+  width: min(920px, 100%);
+  margin-inline: auto;
+  margin-bottom: 56px;
+  padding-left: 90px;
+  color: #1f2f75;
+}
+
+.p-origin-values__title {
+  margin: 0 0 8px;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.p-origin-values__subtitle {
+  margin: 0;
+  font-size: clamp(0.8rem, 1.3vw, 1rem);
+  font-weight: 600;
 }
 
 .p-origin-values__layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 24px;
-  margin-top: 48px;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    margin-top: 32px;
-  }
+  position: relative;
+  width: 920px;
+  min-height: 600px;
+  margin-inline: auto;
 }
 
 .p-origin-values__note-card {
-  grid-column: 1;
-  grid-row: 1;
-  padding: 24px 28px;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 500px;
+  padding: 35px 40px;
   border-radius: 18px;
-  background: linear-gradient(135deg, #2b6cb0 0%, #3cb9d7 100%);
-  box-shadow: 0 10px 24px rgba(16, 63, 125, 0.18);
+  background: url("/assets/img/mission/background-sub.webp") no-repeat center bottom / cover;
+  box-shadow: 0 8px 20px rgba(20, 56, 111, 0.16);
+  font-weight: 400;
+  line-height: 2;
+  z-index: 5;
 
-  @media (max-width: 768px) {
-    grid-column: auto;
-    grid-row: auto;
-  }
-}
-
-.p-origin-values__note-text {
-  margin: 0;
-  font-size: clamp(0.9rem, 1.2vw, 1rem);
-  line-height: 1.8;
-  color: #fff;
-  font-weight: 500;
-}
-
-.p-origin-values__logo-card {
-  grid-column: 2;
-  grid-row: 1;
-  padding: 28px 32px;
-  border-radius: 20px;
-  background: #fff;
-  box-shadow: 0 10px 28px rgba(16, 63, 125, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  img {
-    width: 100%;
-    max-width: 280px;
-    height: auto;
-    object-fit: contain;
+  p {
+    margin: 0;
   }
 
-  @media (max-width: 768px) {
-    grid-column: auto;
-    grid-row: auto;
+  span {
+    color: #1f2f75;
+    font-weight: 700;
   }
 }
 
 .p-origin-values__photo {
-  grid-column: 1;
-  grid-row: 2;
-  border-radius: 20px;
+  position: absolute;
+  left: 70px;
+  bottom: 0;
+  z-index: 4;
+  width: 460px;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
-  aspect-ratio: 16 / 9;
-  max-width: 100%;
+  border-radius: 6px;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
   }
+}
 
-  @media (max-width: 768px) {
-    grid-column: auto;
-    grid-row: auto;
+.p-origin-values__logo-card {
+  position: absolute;
+  right: 0;
+  top: 150px;
+  z-index: 4;
+  width: 460px;
+  aspect-ratio: 3 / 2;
+  padding: 44px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 8px 18px rgba(20, 56, 111, 0.14);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
   }
 }
 
 .p-origin-values__strap-line {
-  margin: 40px auto 32px;
-  max-width: 720px;
-  padding: 18px 28px;
-  border-radius: 999px;
-  text-align: center;
-  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
-  font-weight: 600;
-  color: #1a2f74;
-  background: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 4px 20px rgba(26, 47, 116, 0.08);
   position: relative;
-  z-index: 1;
-  isolation: isolate;
+  z-index: 2;
+  width: min(600px, 100%);
+  margin: 64px auto 56px;
+  padding: 24px 36px;
+  border-radius: 14px;
+  background: #3CB9D7;
+  color: #111;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.9;
+  overflow: hidden;
 
   &::before {
     content: "";
     position: absolute;
     inset: 0;
-    border-radius: inherit;
     background: url("/assets/img/zarazara-l.webp") repeat;
-    background-size: 280px auto;
+    background-size: 320px auto;
     mix-blend-mode: screen;
-    opacity: 0.35;
+    opacity: 0.6;
     pointer-events: none;
+    z-index: 0;
   }
 
-  @media (max-width: 768px) {
-    margin: 28px 0 24px;
-    padding: 16px 18px;
-    border-radius: 16px;
+  span {
+    position: relative;
+    z-index: 1;
   }
 }
 
 .p-origin-values__bands {
-  list-style: none;
-  margin: 0;
+  width: min(920px, 100%);
+  margin: 0 auto;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
 
-.p-origin-values__band {
-  margin: 0;
-  padding: 22px 28px;
-  border-radius: 16px;
-  background: linear-gradient(180deg, #1e4d8c 0%, #3cb9d7 100%);
-  box-shadow: 0 6px 18px rgba(16, 63, 125, 0.2);
+  li {
+    padding: 15px 28px;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: 400;
+    line-height: 1.7;
+    text-align: left;
+    font-size: 1.1rem;
 
-  @media (max-width: 768px) {
-    padding: 18px 20px;
+    & + li {
+      margin-top: 18px;
+    }
+
+    &:nth-child(1) {
+      background: #0154A6;
+    }
+
+    &:nth-child(2) {
+      background: #1A8DDF;
+    }
+
+    &:nth-child(3) {
+      background: #33A9DB;
+    }
+
+    &:nth-child(4) {
+      background: #3ABAD4;
+    }
   }
 }
 
-.p-origin-values__band-text {
-  display: block;
-  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
-  font-weight: 600;
-  line-height: 1.65;
-  color: #fff;
-  font-family: "Kiwi Maru", serif;
+@media (max-width: 768px) {
+  .p-origin-values {
+    padding: 80px 0 60px;
+  }
+
+  .p-origin-values__wave {
+    top: 0;
+    width: 160vw;
+    height: 320px;
+    opacity: 0.75;
+  }
+
+  .p-origin-values__head {
+    padding-left: 0;
+    margin-bottom: 36px;
+  }
+
+  .p-origin-values__layout {
+    width: min(100%, 360px);
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  /* カード */
+  .p-origin-values__note-card {
+    position: relative;
+    width: 100%;
+    padding: 22px 20px;
+    border-radius: 16px;
+    line-height: 1.8;
+    font-size: 0.95rem;
+    z-index: 3;
+    margin-top: 40px;
+
+    br {
+      display: none;
+    }
+  }
+
+  /* 写真 */
+  .p-origin-values__photo {
+    width: 300px;
+    aspect-ratio: 3 / 2;
+    margin-top: 20px;
+    border-radius: 14px;
+    overflow: hidden;
+    z-index: 2;
+    left: 0;
+    bottom: 140px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+  }
+
+  .p-origin-values__logo-card {
+    width: 78%;
+    padding: 20px;
+    border-radius: 16px;
+    z-index: 4;
+    top: auto;
+    bottom: 0;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .p-origin-values__strap-line {
+    width: min(100%, 360px);
+    margin: 36px auto;
+    padding: 20px 16px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-align: left;
+
+    br {
+      display: none;
+    }
+  }
+
+  .p-origin-values__bands {
+    width: min(100%, 360px);
+  }
+
+  .p-origin-values__bands li {
+    padding: 14px 16px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
 }
 
 /* =================
@@ -528,6 +711,17 @@ OUR COMMITMENT
 .p-origin-commitment {
   padding: 0 0 100px;
   background: #f7f8fa;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -5%;
+    background: url("/assets/img/mission/mission-mv-bg.webp") no-repeat center center / cover;
+    z-index: 0;
+    transform: translateY(200px) rotate(20deg) scaleX(-1);
+    transform-origin: center;
+  }
 
   @media (max-width: 768px) {
     padding: 0 0 64px;
@@ -537,7 +731,7 @@ OUR COMMITMENT
 .p-origin-commitment__panel {
   width: min(920px, 100%);
   margin-inline: auto;
-  padding: clamp(48px, 6vw, 72px) clamp(32px, 5vw, 56px) clamp(32px, 4vw, 48px);
+  padding: 40px;
   border-radius: 28px;
   background: #3cb9d7;
   overflow: hidden;
@@ -586,6 +780,11 @@ OUR COMMITMENT
     }
   }
 
+  .is-highlight {
+    color: #1A2F74;
+    font-weight: 700;
+  }
+
   @media (max-width: 768px) {
     padding: 24px 18px;
   }
@@ -594,14 +793,65 @@ OUR COMMITMENT
 .p-origin-commitment__illust {
   position: relative;
   z-index: 1;
-  margin-top: 32px;
-  text-align: center;
+  margin-bottom: 300px;
 }
 
 .p-origin-commitment__illust-img {
-  width: min(100%, 520px);
+  width: 100%;
   height: auto;
-  margin-inline: auto;
-  display: block;
-  object-fit: contain;
+  position: absolute;
+  right: -350px;
+  bottom: -250px;
+}
+
+.p-origin .l-main {
+  position: relative;
+  overflow-x: clip;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .p-origin-commitment {
+    padding: 0 0 80px;
+
+    &::before {
+      inset: -10%;
+      width: 140vw;
+      left: 50%;
+      transform: translateX(-50%)
+                translateY(160px)
+                rotate(16deg)
+                scaleX(-1);
+      background-position: center center;
+    }
+  }
+
+  .p-origin-commitment__panel {
+    padding: 40px 20px 28px;
+    border-radius: 22px;
+  }
+
+  .p-origin-commitment__body {
+    margin-top: 28px;
+    padding: 24px 18px;
+    line-height: 1.9;
+  }
+
+  .p-origin-commitment__illust {
+    position: relative;
+    width: min(100%, 360px);
+    margin: -12px -50px 0 auto;
+    z-index: 2;
+  }
+
+  .p-origin-commitment__illust-img {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    margin-left: auto;
+    height: auto;
+  }
 }

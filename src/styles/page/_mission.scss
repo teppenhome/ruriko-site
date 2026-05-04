@@ -27,12 +27,11 @@ MV
   &::before {
     content: "";
     position: absolute;
-    inset: 0;
+    inset: -5%;
     background: url("/assets/img/mission/mission-mv-bg.webp") no-repeat center center/ cover;
     z-index: 0;
-    transform: rotate(-5deg);
+    transform: translateY(-200px) rotate(-10deg);
     transform-origin: center;
-    inset: -5%;
 
     @media (max-width: 768px) {
       transform: rotate(-10deg) translateY(-140px);
@@ -73,7 +72,7 @@ MV
 .p-mission-mv__card {
   max-width: 600px;
   height: 200px;
-  margin: 0 auto;
+  margin: 120px auto 0;
   padding: 32px;
   border-radius: 20px;
   background: url("/assets/img/mission/background-sub.webp") no-repeat center 90% /cover;
@@ -168,6 +167,11 @@ MV
     background: url("/assets/img/mission/mission-mv-bg.webp") no-repeat center bottom / cover;
     z-index: 0;
     transform: translateX(-50%) scaleX(-1);
+
+    @media (max-width: 768px) {
+      top: auto;
+      bottom: 0;
+    }
   }
 
   .l-container {
@@ -229,7 +233,7 @@ MV
 
 @media (max-width: 768px) {
   .p-mission-philosophy {
-    padding: 0 0 40px;
+    padding: 0 0 150px;
 
     &::before {
       height: 260px;
@@ -246,4 +250,10 @@ MV
     padding: 24px 18px;
     line-height: 1.9;
   }
+}
+
+.p-mission .l-main {
+  position: relative;
+  overflow-x: clip;
+  z-index: 1;
 }
