@@ -6,7 +6,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const pages = [
   "index",
-  "shop",
+  "store",
   "store",
   "company",
   "mission",
