@@ -629,6 +629,7 @@ MV（mission と同系統）
     flex-direction: column;
     align-items: center;
     position: relative;
+    min-height: 600px;
   }
 
   /* カード */
@@ -666,21 +667,6 @@ MV（mission と同系統）
     }
   }
 
-  .p-origin-values__logo-card {
-    width: 78%;
-    padding: 20px;
-    border-radius: 16px;
-    z-index: 4;
-    top: auto;
-    bottom: 0;
-
-    img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-    }
-  }
-
   .p-origin-values__strap-line {
     width: min(100%, 360px);
     margin: 36px auto;
@@ -702,6 +688,29 @@ MV（mission と同系統）
     padding: 14px 16px;
     font-size: 0.95rem;
     line-height: 1.7;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .p-origin-values__logo-card {
+    position: absolute;
+    width: min(78%, 280px);
+    aspect-ratio: 3 / 2;
+    height: auto;
+    padding: 20px;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    z-index: 4;
+    border-radius: 16px;
+    
+  }
+
+  .p-origin-values__logo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 }
 
