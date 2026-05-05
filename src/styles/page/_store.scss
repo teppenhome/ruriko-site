@@ -35,6 +35,11 @@ $store-text: #333;
   box-shadow:
     0 0 28px rgba(0, 98, 255, 0.4),
     inset 0 0 0 1px rgba(0, 98, 255, 0.1);
+
+    @media (max-width: 768px) {
+      width: 500px;
+      height: 500px;
+    }
 }
 
 .p-store-bg-circle.c1 {
@@ -45,8 +50,13 @@ $store-text: #333;
 .p-store-bg-circle.c2 {
   top: 700px;
   right: 90px;
-  width: 800px;
-  height: 800px;
+  width: 1000px;
+  height: 1000px;
+
+  @media (max-width: 768px) {
+    width: 500px;
+    height: 500px;
+  }
 }
 
 .p-store-bg-circle.c3 {
@@ -54,11 +64,21 @@ $store-text: #333;
   left: -100px;
   width: 1000px;
   height: 1000px;
+
+  @media (max-width: 768px) {
+    width: 300px;
+    height: 300px;
+  }
 }
 
 .p-store-bg-circle.c4 {
   top: 3000px;
   right: 5%;
+
+  @media (max-width: 768px) {
+    width: 300px;
+    height: 300px;
+  }
 }
 
 .p-store-bg-circle.c5 {
@@ -66,6 +86,11 @@ $store-text: #333;
   left: -100px;
   width: 900px;
   height: 900px;
+
+  @media (max-width: 768px) {
+    width: 300px;
+    height: 300px;
+  }
 }
 
 .p-store-bg-circle.c6 {
@@ -73,6 +98,11 @@ $store-text: #333;
   right: -120px;
   width: 1000px;
   height: 1000px;
+
+  @media (max-width: 768px) {
+    width: 300px;
+    height: 300px;
+  }
 }
 
 .p-store-bg-circle.c7 {
@@ -80,6 +110,11 @@ $store-text: #333;
   left: 100px;
   width: 1200px;
   height: 1200px;
+
+  @media (max-width: 768px) {
+    width: 800px;
+    height: 800px;
+  }
 }
 
 .p-store-mv {
@@ -544,18 +579,6 @@ $store-text: #333;
     display: none;
   }
 }
-
-// .p-store-banner__deco img {
-//   animation: float 6s ease-in-out infinite;
-// }
-
-// .d1 { animation: float 5s ease-in-out infinite; }
-// .d2 { animation: float 7s ease-in-out infinite; }
-// .d3 { animation: float 6s ease-in-out infinite; }
-// .d4 { animation: float 8s ease-in-out infinite; }
-// .d5 { animation: float 5.5s ease-in-out infinite; }
-// .d6 { animation: float 6.5s ease-in-out infinite; }
-// .d7 { animation: float 7.5s ease-in-out infinite; }
 
 @keyframes float {
   0%, 100% {
