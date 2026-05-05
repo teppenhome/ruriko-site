@@ -4,11 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>コラム | 瑠璃光薬局</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500;700&family=Noto+Sans+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body class="p-column is-loading">
     <header class="p-header">
       <div class="p-header__inner l-container">
-        <a class="p-header__logo" href="index.html">瑠璃光薬局</a>
+        <a class="p-header__logo" href="index.html">
+          <img src="/assets/img/logo-wide.png" alt="瑠璃光薬局" />
+        </a>
         <nav class="p-header__nav" id="global-nav" aria-label="グローバルナビゲーション">
           <ul class="p-header__list">
             <li class="p-header__item">
@@ -59,25 +67,288 @@
     </div>
 
     <main class="l-main" id="main">
-      <div class="l-container">
-        <header class="p-column__head">
-          <h1 class="c-title">コラム</h1>
-        </header>
-        <section class="p-column__section" aria-label="コラム一覧">
-        </section>
-      </div>
+      <section class="p-column-mv l-container" aria-labelledby="column-mv-heading">
+        <h1 class="p-sub-mv__title js-title-mask" id="column-mv-heading">
+          <span>瑠璃光薬局の最新情報</span>
+        </h1>
+        <div class="l-container">
+          <div class="p-mv-pill">
+            <div class="p-mv-pill__half-wrap p-mv-pill__half-wrap--left">
+              <div class="p-mv-pill__half p-mv-pill__half--left">
+                <img class="js-mv-image" src="/assets/img/store/page-top_yellow.png" alt="黄色の背景" />
+              </div>
+              <div class="p-mv-pill__text _black">
+                健康を支えるヒント、セルフケアに役立つ知識、<br />
+                日々の暮らしを豊かにするお薬の情報まで。<br />
+                地域のみなさまに役立つ話題をわかりやすくお届けします。
+              </div>
+            </div>
+
+            <div class="p-mv-pill__half-wrap p-mv-pill__half-wrap--right">
+              <div class="p-mv-pill__half p-mv-pill__half--right">
+                <img class="js-mv-image" src="/assets/img/company/company-top.png" alt="瑠璃光薬局スタッフ" />
+              </div>
+            </div>
+
+            <div class="p-mv-pill__center">
+              <img class="js-mv-image" src="/assets/img/medicine06.png" alt="薬のイメージ" />
+            </div>
+            <div class="p-mv-pill__center _002">
+              <img class="js-mv-image" src="/assets/img/medicine06.png" alt="薬のイメージ" />
+            </div>
+            <div class="p-mv-pill__center _003">
+              <img class="js-mv-image" src="/assets/img/medicine06.png" alt="薬のイメージ" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="p-column-pickup" aria-labelledby="column-pickup-title">
+        <div class="l-container">
+          <div class="p-column-pickup__panel">
+            <div class="p-column-pickup__head">
+              <h2 class="p-column-pickup__title" id="column-pickup-title">PICK UP</h2>
+              <div class="p-column-pickup__nav" aria-label="注目記事の移動">
+                <button class="p-column-pickup__nav-button is-prev" type="button" aria-label="前の記事へ"></button>
+              <button class="p-column-pickup__nav-button is-next" type="button" aria-label="次の記事へ"></button>
+              </div>
+            </div>
+            <div class="p-column-pickup__cards">
+              <article class="p-column-pickup-card">
+                <a class="p-column-pickup-card__link" href="#">
+                  <div class="p-column-pickup-card__image-wrap">
+                    <img
+                      class="p-column-pickup-card__image"
+                      src="/assets/img/column/blog01.jpg"
+                      alt="花粉症対策をしている女性"
+                    />
+                  </div>
+                  <div class="p-column-pickup-card__body">
+                    <p class="p-column-pickup-card__meta">
+                      <time datetime="2024-04-16">2024.04.16</time>
+                      <span>健康情報</span>
+                    </p>
+                    <h3 class="p-column-pickup-card__heading">花粉症対策と早めのケアの重要性</h3>
+                    <p class="p-column-pickup-card__text">
+                      春先に増える花粉症の症状。日常で取り入れられる対策や、薬局で相談できるポイントを解説します。
+                    </p>
+                  </div>
+                </a>
+              </article>
+
+              <article class="p-column-pickup-card">
+                <a class="p-column-pickup-card__link" href="#">
+                  <div class="p-column-pickup-card__image-wrap">
+                    <img
+                      class="p-column-pickup-card__image"
+                      src="/assets/img/column/blog06.jpg"
+                      alt="季節の変わり目に悩む女性"
+                    />
+                  </div>
+                  <div class="p-column-pickup-card__body">
+                    <p class="p-column-pickup-card__meta">
+                      <time datetime="2024-04-16">2024.04.16</time>
+                      <span>コラム</span>
+                    </p>
+                    <h3 class="p-column-pickup-card__heading">風邪かな？と思ったときの正しい対処法</h3>
+                    <p class="p-column-pickup-card__text">
+                      季節の変わり目や疲れがたまったとき、体調を崩しやすくなります。「少し喉が痛い」「だるい」と感じたときは、無理をせず早めの対処が大切です。
+                    </p>
+                  </div>
+                </a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="p-column-list-section" aria-label="コラム一覧">
+        <div class="l-container">
+          <div class="p-column-list">
+            <article class="p-column-card">
+              <a class="p-column-card__link" href="#">
+                <div class="p-column-card__image-wrap">
+                  <img class="p-column-card__image" src="/assets/img/column/blog02.jpg" alt="薬局で相談する様子" />
+                </div>
+                <div class="p-column-card__body">
+                  <p class="p-column-card__meta"><time datetime="2024-04-16">2024.04.16</time><span>お薬情報</span></p>
+                  <h2 class="p-column-card__title">薬局でできる健康相談とは？</h2>
+                  <p class="p-column-card__excerpt">
+                    薬局はお薬を受け取るだけの場所ではなく、健康に関するさまざまな相談ができる身近な存在です。
+                  </p>
+                </div>
+              </a>
+            </article>
+
+            <article class="p-column-card">
+              <a class="p-column-card__link" href="#">
+                <div class="p-column-card__image-wrap">
+                  <img class="p-column-card__image" src="/assets/img/column/blog05-mini.webp" alt="お薬を手に取る様子" />
+                </div>
+                <div class="p-column-card__body">
+                  <p class="p-column-card__meta"><time datetime="2024-04-10">2024.04.10</time><span>服薬指導</span></p>
+                  <h2 class="p-column-card__title">お薬の正しい飲み方と注意点について</h2>
+                  <p class="p-column-card__excerpt">
+                    お薬の効果をしっかり引き出すために知っておきたい、服薬タイミングと飲み合わせの基本をまとめました。
+                  </p>
+                </div>
+              </a>
+            </article>
+
+            <article class="p-column-card">
+              <a class="p-column-card__link" href="#">
+                <div class="p-column-card__image-wrap">
+                  <img class="p-column-card__image" src="/assets/img/column/blog03.jpg" alt="薬剤師が受付で対応している様子" />
+                </div>
+                <div class="p-column-card__body">
+                  <p class="p-column-card__meta"><time datetime="2024-04-05">2024.04.05</time><span>薬局活用</span></p>
+                  <h2 class="p-column-card__title">かかりつけ薬局を持つメリットとは</h2>
+                  <p class="p-column-card__excerpt">
+                    お薬手帳の活用や重複投薬のチェックなど、かかりつけ薬局を持つことで得られる安心を紹介します。
+                  </p>
+                </div>
+              </a>
+            </article>
+
+            <article class="p-column-card">
+              <a class="p-column-card__link" href="#">
+                <div class="p-column-card__image-wrap">
+                  <img class="p-column-card__image" src="/assets/img/column/blog04.jpg" alt="疲れた表情の女性" />
+                </div>
+                <div class="p-column-card__body">
+                  <p class="p-column-card__meta"><time datetime="2024-03-29">2024.03.29</time><span>季節対策</span></p>
+                  <h2 class="p-column-card__title">春先に気をつけたい生活リズムの整え方</h2>
+                  <p class="p-column-card__excerpt">
+                    新生活が始まる季節に体調を崩しやすい理由と、睡眠・食事・運動のバランスを整えるコツを解説します。
+                  </p>
+                </div>
+              </a>
+            </article>
+
+            <article class="p-column-card">
+              <a class="p-column-card__link" href="#">
+                <div class="p-column-card__image-wrap">
+                  <img class="p-column-card__image" src="/assets/img/column/blog02.jpg" alt="相談するスタッフと来局者" />
+                </div>
+                <div class="p-column-card__body">
+                  <p class="p-column-card__meta"><time datetime="2024-03-21">2024.03.21</time><span>相談事例</span></p>
+                  <h2 class="p-column-card__title">気になる症状、薬剤師に相談してみませんか</h2>
+                  <p class="p-column-card__excerpt">
+                    受診前の不安や服薬中の疑問など、薬剤師に相談できる内容と、相談時に伝えると良いポイントをお伝えします。
+                  </p>
+                </div>
+              </a>
+            </article>
+
+            <article class="p-column-card">
+              <a class="p-column-card__link" href="#">
+                <div class="p-column-card__image-wrap">
+                  <img class="p-column-card__image" src="/assets/img/column/blog05-mini.webp" alt="薬と水のイメージ" />
+                </div>
+                <div class="p-column-card__body">
+                  <p class="p-column-card__meta"><time datetime="2024-03-14">2024.03.14</time><span>豆知識</span></p>
+                  <h2 class="p-column-card__title">知っておきたいジェネリック医薬品の基本</h2>
+                  <p class="p-column-card__excerpt">
+                    ジェネリック医薬品の特徴や先発医薬品との違い、選ぶ際のポイントをわかりやすくまとめました。
+                  </p>
+                </div>
+              </a>
+            </article>
+          </div>
+
+          <nav class="p-column-pagination" aria-label="ページネーション">
+            <a class="p-column-pagination__button p-column-pagination__button--arrow" href="#" aria-label="前のページ">◀</a>
+            <a class="p-column-pagination__button is-current" href="#" aria-current="page">1</a>
+            <a class="p-column-pagination__button" href="#">2</a>
+            <a class="p-column-pagination__button p-column-pagination__button--arrow" href="#" aria-label="次のページ">▶</a>
+          </nav>
+        </div>
+      </section>
+
+      <section class="p-top-internship js-fade-up" aria-labelledby="top-internship-title">
+        <div class="p-top-internship__container">
+          <img class="p-top-internship__bg" src="/assets/img/internship-area.webp" alt="薬局で働くスタッフの様子" />
+
+          <div class="p-top-internship__content">
+            <a class="p-top-internship__card" href="work.html" aria-label="インターンシップ紹介ページへ">
+              <div class="p-top-internship__thumb-wrap">
+                <img
+                  class="p-top-internship__thumb"
+                  src="/assets/img/internship-person.jpg"
+                  alt="インターンシップ体験の様子"
+                  width="260"
+                  height="146"
+                />
+              </div>
+              <div class="p-top-internship__body">
+                <p class="p-top-internship__title" id="top-internship-title">
+                  <span class="en">INTERNSHIP</span>
+                  <span>ーインターンシップー</span>
+                </p>
+                <p class="p-top-internship__text">薬学生向けの就業体験を実施しています</p>
+              </div>
+              <span class="p-top-internship__arrow" aria-hidden="true"></span>
+            </a>
+
+            <p class="p-top-internship__catch">
+              お薬を通して<br />
+              いかに<br />
+              皆様のお役にたてるか
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer class="l-footer">
-      <div class="l-container">
-        <p class="l-footer__copy">© 瑠璃光薬局</p>
-        <nav class="l-footer__nav" aria-label="フッターナビゲーション">
-          <ul class="l-footer__list">
-            <li class="l-footer__item">
-              <a class="l-footer__link" href="privacy.html">プライバシーポリシー</a>
-            </li>
-          </ul>
-        </nav>
+    <footer class="l-footer p-footer">
+      <div class="l-footer__inner">
+        <div class="l-footer__top">
+          <nav class="l-footer__nav" aria-label="フッターナビゲーション">
+            <div class="l-footer__nav-column">
+              <ul class="l-footer__list">
+                <li class="l-footer__item"><a class="l-footer__link" href="index.html">ホーム</a></li>
+                <li class="l-footer__item"><a class="l-footer__link" href="store.html">店舗一覧</a></li>
+                <li class="l-footer__item"><a class="l-footer__link" href="work.html">働き方</a></li>
+                <li class="l-footer__item"><a class="l-footer__link" href="column.html">コラム</a></li>
+                <li class="l-footer__item"><a class="l-footer__link" href="company.html">会社概要</a></li>
+              </ul>
+            </div>
+            <div class="l-footer__nav-column">
+              <ul class="l-footer__list">
+                <li class="l-footer__item">
+                  <a class="l-footer__link" href="#">各種指針・体制整備について</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+        <div class="l-footer__bottom">
+          <div class="l-footer__company">
+            <a class="l-footer__logo" href="index.html" aria-label="瑠璃光薬局トップページへ">
+              <img src="/assets/img/logo-wide.png" alt="瑠璃光薬局ロゴ" />
+            </a>
+            <div class="l-footer__company-body">
+              <p class="l-footer__name">株式会社 瑠璃光(るりこう)</p>
+              <p class="l-footer__address">【本社】〒920-0942 石川県金沢市小立野1丁目2番7号</p>
+              <p class="l-footer__tel">TEL: 076-256-5278</p>
+              <p class="l-footer__fax">FAX: 076-225-8678</p>
+            </div>
+          </div>
+
+          <div class="l-footer__cta">
+            <a class="c-button c-button--blue" href="work.html">
+              採用特設ページ
+              <span class="c-button-icon" aria-hidden="true"></span>
+            </a>
+            <a class="c-button c-button--yellow" href="#">
+              応募エントリー
+              <span class="c-button-icon" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+
+        <p class="p-footer__copy">© 2026 瑠璃光薬局 All Rights Reserved.</p>
       </div>
     </footer>
     <script type="module" src="/assets/js/main.js"></script>

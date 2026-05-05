@@ -477,12 +477,14 @@ $store-text: #333;
 .d1 {
   top: 16px;
   left: 16px;
+  animation: float 5s ease-in-out 0s infinite;
 }
 
 /* 上中央 */
 .d2 {
   top: 10px;
   left: 40%;
+  animation: float 7s ease-in-out 1s infinite;
 
   @media (max-width: 768px) {
     display: none;
@@ -493,12 +495,14 @@ $store-text: #333;
 .d3 {
   top: 20px;
   right: 20px;
+  animation: float 6s ease-in-out 2s infinite;
 }
 
 /* 左中 */
 .d4 {
   top: 40%;
   left: 35%;
+  animation: float 8s ease-in-out 3s infinite;
 
   @media (max-width: 768px) {
     top: auto;
@@ -512,6 +516,7 @@ $store-text: #333;
 .d5 {
   top: 70%;
   left: 32%;
+  animation: float 5.5s ease-in-out 4s infinite;
 
   @media (max-width: 768px) {
     display: none;
@@ -522,6 +527,7 @@ $store-text: #333;
 .d6 {
   bottom: 16px;
   left: 20px;
+  animation: float 6.5s ease-in-out 5s infinite;
 
   @media (max-width: 768px) {
     bottom: 0;
@@ -532,23 +538,24 @@ $store-text: #333;
 .d7 {
   bottom: 16px;
   right: 20px;
+  animation: float 7.5s ease-in-out 6s infinite;
 
   @media (max-width: 768px) {
     display: none;
   }
 }
 
-.p-store-banner__deco img {
-  animation: float 6s ease-in-out infinite;
-}
+// .p-store-banner__deco img {
+//   animation: float 6s ease-in-out infinite;
+// }
 
-.d1 { animation: float 5s ease-in-out infinite; }
-.d2 { animation: float 7s ease-in-out infinite; }
-.d3 { animation: float 6s ease-in-out infinite; }
-.d4 { animation: float 8s ease-in-out infinite; }
-.d5 { animation: float 5.5s ease-in-out infinite; }
-.d6 { animation: float 6.5s ease-in-out infinite; }
-.d7 { animation: float 7.5s ease-in-out infinite; }
+// .d1 { animation: float 5s ease-in-out infinite; }
+// .d2 { animation: float 7s ease-in-out infinite; }
+// .d3 { animation: float 6s ease-in-out infinite; }
+// .d4 { animation: float 8s ease-in-out infinite; }
+// .d5 { animation: float 5.5s ease-in-out infinite; }
+// .d6 { animation: float 6.5s ease-in-out infinite; }
+// .d7 { animation: float 7.5s ease-in-out infinite; }
 
 @keyframes float {
   0%, 100% {
