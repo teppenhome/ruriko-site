@@ -65,4 +65,16 @@
   color: #1A2F74;
   letter-spacing: 0.06em;
   line-height: 1.2;
+  
+  &._center {
+    text-align: center;
+  }
+
+  &._line {
+    text-shadow:
+      1px 1px 0 #fff,
+      -1px 1px 0 #fff,
+      1px -1px 0 #fff,
+      -1px -1px 0 #fff;
+  }
 }

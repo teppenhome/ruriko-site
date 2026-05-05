@@ -6,210 +6,341 @@
 
 .p-work-mv {
   position: relative;
-  padding: clamp(104px, 16vw, 160px) 0 64px;
-  background:
-    linear-gradient(180deg, rgba(10, 80, 150, 0.9) 0%, rgba(47, 149, 217, 0.78) 48%, rgba(247, 248, 250, 0) 100%),
-    radial-gradient(circle at 12% 24%, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0) 50%),
-    radial-gradient(circle at 82% 10%, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0) 52%),
-    #1470b8;
+  padding: 90px 0 48px;
+  overflow: hidden;
+  background: url("/assets/img/work/work-background.png") no-repeat center top / cover;
 
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image:
-      radial-gradient(circle at 20% 34%, rgba(255, 255, 255, 0.26) 0, rgba(255, 255, 255, 0) 44%),
-      repeating-radial-gradient(
-        circle at 84% 8%,
-        rgba(255, 255, 255, 0.12) 0 8px,
-        rgba(255, 255, 255, 0) 8px 22px
-      );
-    opacity: 0.9;
-    pointer-events: none;
-  }
-
-  .l-container {
-    position: relative;
-    z-index: 1;
+  @media (max-width: 768px) {
+    padding: 110px 0 40px;
   }
 }
 
-.p-work-mv__title {
-  margin: 0;
-  color: #fff;
-  text-align: center;
-  font-family: "Kiwi Maru", serif;
-  font-size: clamp(2.2rem, 5vw, 4rem);
-  letter-spacing: 0.06em;
+.p-work-mv__inner {
+  position: relative;
+  z-index: 1;
 }
 
 .p-work-mv__message {
-  margin: 38px auto 0;
-  max-width: 920px;
-  border-radius: 24px;
-  padding: clamp(20px, 3vw, 32px);
-  display: grid;
-  grid-template-columns: 148px minmax(0, 1fr) 148px;
-  gap: clamp(16px, 2vw, 26px);
-  align-items: center;
-  background: linear-gradient(135deg, rgba(141, 222, 255, 0.97), rgba(33, 136, 211, 0.95));
-  box-shadow: 0 20px 38px rgba(17, 90, 150, 0.22);
-}
-
-.p-work-mv__person {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.42);
+  position: relative;
+  width: min(920px, 100%);
+  min-height: 166px;
+  margin-inline: auto;
+  padding: 42px 190px;
+  border-radius: 22px;
+  margin-top: 60px;
+  box-shadow: 0 18px 36px rgba(31, 47, 117, 0.18);
+  background: url("/assets/img/mission/background-sub.webp") no-repeat center 80% / cover;
   overflow: hidden;
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  @media (max-width: 768px) {
+    padding: 32px 24px;
+    border-radius: 18px;
   }
 }
 
 .p-work-mv__message-text {
-  margin: 0;
-  color: #fff;
-  font-size: 1.6rem;
-  line-height: 1.9;
-  font-weight: 500;
-}
-
-.p-work-intro,
-.p-work-jobs,
-.p-work-support,
-.p-work-bottom-visual,
-.p-work-links {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  margin: 0;
+  color: #111;
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  font-weight: 700;
+  line-height: 2;
+  letter-spacing: 0.04em;
 
-  .l-container {
-    position: relative;
+  strong {
+    color: #1f2f75;
+  }
+
+  @media (max-width: 768px) {
+    text-align: left;
+
+    br {
+      display: none;
+    }
   }
 }
 
-.p-work-intro {
-  padding: clamp(64px, 10vw, 120px) 0 clamp(52px, 8vw, 84px);
+.p-work-mv__person {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  width: 150px;
 
-  &::before,
-  &::after {
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.p-work-mv__person--left {
+  left: 20px;
+  width: 170px;
+  transform: scaleX(-1);
+}
+
+.p-work-mv__person--right {
+  right: 30px;
+}
+
+.p-work-intro {
+  position: relative;
+  padding: clamp(80px, 10vw, 130px) 0 clamp(40px, 6vw, 70px);
+  background: #f7f8fa;
+  overflow: hidden;
+  z-index: 0;
+
+  &::before {
     content: "";
     position: absolute;
+    width: min(86vw, 900px);
+    aspect-ratio: 1 / 1;
+    left: 50%;
+    top: -180px;
+    transform: translateX(-50%);
     border-radius: 50%;
+    border: clamp(32px, 5vw, 56px) solid rgba(198, 226, 255, 0.65);
+    box-shadow:
+      0 0 36px rgba(71, 151, 255, 0.22),
+      inset 0 0 40px rgba(119, 226, 230, 0.2);
     pointer-events: none;
     z-index: -1;
   }
 
-  &::before {
-    width: min(72vw, 760px);
+  &::after {
+    content: "";
+    position: absolute;
+    width: min(56vw, 560px);
     aspect-ratio: 1 / 1;
-    left: clamp(-400px, -30vw, -220px);
-    top: -24px;
-    border: clamp(26px, 4.2vw, 42px) solid rgba(189, 220, 255, 0.48);
+    right: clamp(-280px, -18vw, -120px);
+    bottom: -160px;
+    border-radius: 50%;
+    border: clamp(24px, 4vw, 44px) solid rgba(205, 226, 255, 0.75);
+    box-shadow:
+      0 0 34px rgba(31, 79, 163, 0.16),
+      inset 0 0 28px rgba(111, 201, 229, 0.18);
+    pointer-events: none;
+    z-index: -1;
   }
 
-  &::after {
-    width: min(48vw, 520px);
-    aspect-ratio: 1 / 1;
-    right: clamp(-230px, -18vw, -110px);
-    bottom: -40px;
-    border: clamp(16px, 2.8vw, 28px) solid rgba(201, 232, 255, 0.52);
+  @media (max-width: 768px) {
+    padding: 72px 0 36px;
+
+    &::before {
+      width: 760px;
+      top: -120px;
+      border-width: 34px;
+    }
+
+    &::after {
+      width: 420px;
+      right: -250px;
+      bottom: -130px;
+      border-width: 28px;
+    }
   }
 }
 
 .p-work-intro__inner {
+  position: relative;
+  z-index: 1;
   max-width: 760px;
   margin: 0 auto;
 }
 
 .p-work-intro__label {
-  display: inline-block;
-  margin: 0 0 20px;
+  width: fit-content;
+  margin: 0 auto 22px;
+  padding: 10px 28px;
   border-radius: 999px;
-  padding: 10px 22px;
-  font-size: 1.4rem;
+  background: linear-gradient(135deg, #4fb1cf 0%, #75c7e2 100%);
+  color: #fff;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
   font-weight: 700;
-  letter-spacing: 0.08em;
-  color: #1465ab;
-  background: linear-gradient(135deg, #d8f4ff 0%, #c8ecff 100%);
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+  text-align: center;
+  box-shadow: 0 10px 24px rgba(34, 137, 180, 0.18);
+}
+
+.p-work-intro__lead {
+  max-width: 720px;
+  margin: 0 auto 28px;
+  padding: 16px 24px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #5eb6d1 0%, #72c4de 100%);
+  color: #fff;
+  font-size: clamp(1.3rem, 1.7vw, 1.55rem);
+  font-weight: 700;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
 }
 
 .p-work-intro__text {
-  margin: 0;
-  font-size: 1.7rem;
-  line-height: 2;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #111;
+  font-size: clamp(1.35rem, 1.7vw, 1.6rem);
+  font-weight: 500;
+  line-height: 2.05;
+  letter-spacing: 0.03em;
 }
 
 .p-work-jobs {
-  padding: 18px 0 clamp(62px, 10vw, 90px);
+  position: relative;
+  padding: clamp(34px, 5vw, 60px) 0 clamp(90px, 12vw, 150px);
+  background: #f7f8fa;
+  overflow: hidden;
+  z-index: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: min(54vw, 560px);
+    aspect-ratio: 1 / 1;
+    left: clamp(-300px, -18vw, -120px);
+    top: 34%;
+    border-radius: 50%;
+    border: clamp(22px, 3.8vw, 40px) solid rgba(205, 234, 255, 0.7);
+    box-shadow:
+      0 0 34px rgba(31, 79, 163, 0.16),
+      inset 0 0 28px rgba(111, 201, 229, 0.18);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  @media (max-width: 768px) {
+    padding: 34px 0 84px;
+
+    &::before {
+      width: 420px;
+      left: -260px;
+      top: 42%;
+      border-width: 28px;
+    }
+  }
 }
 
 .p-work-jobs__title {
-  margin: 0;
-  padding-bottom: 14px;
-  font-size: clamp(2.1rem, 3vw, 2.9rem);
-  color: #123f7a;
+  width: min(760px, 100%);
+  margin: 0 auto;
+  padding-bottom: 16px;
   border-bottom: 1px solid rgba(18, 63, 122, 0.3);
+  color: #123f7a;
+  font-family: "Kiwi Maru", serif;
+  font-size: clamp(2rem, 3vw, 2.9rem);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
 }
 
 .p-work-jobs__grid {
-  margin-top: 32px;
-  max-width: 760px;
-  margin-inline: auto;
+  position: relative;
+  z-index: 1;
+  width: min(760px, 100%);
+  margin: clamp(36px, 5vw, 56px) auto 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 26px;
+  gap: clamp(44px, 6vw, 72px) clamp(48px, 7vw, 86px);
+
+  @media (max-width: 768px) {
+    width: min(360px, 100%);
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
 }
 
 .p-work-job-card {
-  border-radius: 90px;
+  position: relative;
   overflow: hidden;
+  border-radius: 999px 999px 120px 120px;
   background: #fff;
-  box-shadow: 0 12px 26px rgba(8, 63, 116, 0.17);
+  box-shadow:
+    0 16px 30px rgba(8, 63, 116, 0.18),
+    0 2px 0 rgba(255, 255, 255, 0.9);
 }
 
 .p-work-job-card__photo {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
   background: #d4e9f8;
 
   img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
   }
 }
 
 .p-work-job-card__body {
-  background: linear-gradient(165deg, #ffe56f 0%, #ffd22e 100%);
-  padding: 16px 16px 20px;
+  position: relative;
+  padding: 28px 18px 38px;
   text-align: center;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.34) 0 18%, transparent 18% 100%),
+    radial-gradient(rgba(255, 255, 255, 0.28) 1px, transparent 1px),
+    linear-gradient(165deg, #ffe56f 0%, #ffc400 100%);
+  background-size:
+    100% 100%,
+    6px 6px,
+    100% 100%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(125deg, transparent 0 48%, rgba(255, 255, 255, 0.22) 48% 60%, transparent 60% 100%);
+    pointer-events: none;
+  }
 }
 
 .p-work-job-card__name {
-  margin: 0;
-  font-size: 2rem;
-  color: #18436e;
+  position: relative;
+  z-index: 1;
+  margin: 0 0 22px;
+  color: #111;
   font-family: "Kiwi Maru", serif;
+  font-size: clamp(1.8rem, 2.4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.4;
 }
 
 .p-work-job-card__button {
-  margin-top: 10px;
+  position: relative;
+  z-index: 1;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  min-width: 160px;
+  gap: 10px;
+  min-width: 172px;
+  min-height: 42px;
+  padding: 8px 18px;
   border-radius: 999px;
-  padding: 8px 20px;
-  background: #0f73be;
+  background: #1f56ad;
   color: #fff;
   text-decoration: none;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 8px 16px rgba(31, 86, 173, 0.22);
+
+  &::after {
+    content: "›";
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    line-height: 1;
+  }
 }
 
 .p-work-support {
